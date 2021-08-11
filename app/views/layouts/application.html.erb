@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My SDGs</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://kit.fontawesome.com/c37b9bbd36.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      
+       <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand p-3" href="/"><%= image_tag('mysdg.png') %></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            
+          <ul class="navbar-nav ml-auto">
+           <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Activities", posts_path, class:"nav-link" %>
+            </li>
+            <li>
+              <%= link_to "Members", users_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "New Post", new_post_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "My Page", user_path(current_user.id), class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+            </li>
+           <% else %>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "About", root_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
+            </li>
+          <% end %>
+          </ul>
+         </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mb-auto">
+    <%= yield %>
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <p>To connect with people with same mind</p>
+            <%= image_tag('mysdg.png') %>
+          </div>
+       
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

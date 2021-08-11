@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="post-body">
+    <%= attachment_image_tag @post, :image, format: 'jpeg', size: "300x300" %>
+    <p>Title：<%= @post.title %></p>
+    <p>Category: 
+      <% @post.categories.each do |category| %>
+      <%= link_to category.name, category_path(category) %>
+      <% end %>
+    </p>
+    <p>Contents of Activities：<%= @post.body %></p>
+    <p>Posted by：<%= @post.user.name %></p>
+     <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+    <p>Posted on：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
+    <% if @post.user == current_user %>
+      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure？' }, class: 'btn-sm btn-danger' %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <h1 class="display-4">All the Activities</h1>
+   <div class="row">
+     <div class="col-md-4">
+       <%= render 'posts/lignups' %>
+     </div>
+     <div class="col-md-8">
+      <div class="card w-200 mx-auto mt-4 shadow-lg">
+        <div class="row no-gutters">
+          <% @posts.each do |post| %>
+          <div class="col-md-4">
+            <%= attachment_image_tag post, :image, format: 'jpeg', size: "250x250" %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">
+                  <%= link_to post_path(post) do %>
+                    <p>Title：<%= post.title %></p>
+                  <% end %>
+                </h5>
+                <p class="card-text">
+                  <p>Contents of Activities：<%= post.body %></p>
+                </p>
+                <p class="card-text">
+                   <p>Category:
+                      <% post.categories.each do |category| %>
+                      <%= link_to category.name, category_path(category) %>
+                      <% end %>
+                   </p>
+                </p>
+                <p class="card-text">
+                  <p>Posted by：<%= link_to post.user.name, user_path(post.user) %></p>
+                  <p> <%= attachment_image_tag post.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></p>
+                </p>
+              </div>
+            </div>
+          <% end %>
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><p><%= paginate @posts %></p></li>
+            </ul>
+          </nav>
+        </div>
+     </div>
+     </div>
+  </div>
+</div>
+

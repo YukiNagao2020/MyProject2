@@ -1,0 +1,16 @@
+<div class="contents">
+  <div class="card_header">
+    <div class="card_header_title">
+      <p>Category: <%= @category.name %>.  <strong>ZERO HUNGER</strong></p>
+    </div>
+    
+    <%= render 'posts/samecategory', post: @post %>
+    
+    </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><p><%= paginate @post %></p></li>
+        </ul>
+      </nav>
+  </div>
+

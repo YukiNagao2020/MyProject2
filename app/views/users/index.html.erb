@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>list of all users</h1>
+  <% @users.each do |user| %>
+    <div>
+    <%= link_to user_path(user) do %>
+      <p>Name：<%= user.name %></p>
+      <p>Introduction：<%= user.introduction %></p>
+      <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+    <% end %>
+    </div>
+  <% end %>
+</div>

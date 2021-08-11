@@ -1,0 +1,995 @@
+Started GET "/" for 126.89.127.106 at 2021-08-10 22:39:38 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.6) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20210808052829)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210808052829_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20210808052829_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20210808052829_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210808052829"]]
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20210808053748)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "body" text, "image_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210808053748_create_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210808053748"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddProfileImageIdToUsers (20210808064625)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_image_id" varchar[0m
+  ↳ db/migrate/20210808064625_add_profile_image_id_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210808064625"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddIntroductionToUsers (20210808064742)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "introduction" text[0m
+  ↳ db/migrate/20210808064742_add_introduction_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210808064742"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to Records (20210809042008)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ db/migrate/20210809042008_records.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Records (20210809042008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ db/migrate/20210809042008_records.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Records (20210809042008)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ db/migrate/20210809042008_records.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Records (20210809042008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ db/migrate/20210809042008_records.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Records (20210809042008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ db/migrate/20210809042008_records.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (4.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-08-10 23:37:27.820183"], ["updated_at", "2021-08-10 23:37:27.820183"]]
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDataImageIdToPost (20210810234159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDataImageIdToPost (20210810234159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210810234159_change_data_image_id_to_post.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "title" text DEFAULT NULL, "body" text DEFAULT NULL, "image_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210810234159_change_data_image_id_to_post.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aposts" ("id","title","body","image_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","image_id","user_id","created_at","updated_at" FROM "posts"[0m
+  ↳ db/migrate/20210810234159_change_data_image_id_to_post.rb:3
+  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  ↳ db/migrate/20210810234159_change_data_image_id_to_post.rb:3
+  [1m[35m (2.8ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDataImageIdToPost (20210810234159)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDatatypeImageIdOfPosts (20210810234739)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210810234739_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "title" text DEFAULT NULL, "body" text DEFAULT NULL, "image_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210810234739_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "aposts" ("id","title","body","image_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","image_id","user_id","created_at","updated_at" FROM "posts"[0m
+  ↳ db/migrate/20210810234739_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  ↳ db/migrate/20210810234739_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDatatypeImageIdOfPosts (20210810235221)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "title" text DEFAULT NULL, "body" text DEFAULT NULL, "image_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aposts" ("id","title","body","image_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","image_id","user_id","created_at","updated_at" FROM "posts"[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer NOT NULL PRIMARY KEY, "title" text DEFAULT NULL, "body" text DEFAULT NULL, "image_id" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("id","title","body","image_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","image_id","user_id","created_at","updated_at" FROM "aposts"[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  ↳ db/migrate/20210810235221_change_datatype_image_id_of_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210810235221"]]
+  ↳ bin/rails:9
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20210810235447)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210810235447_create_categories.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210810235447_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210810235447"]]
+  ↳ bin/rails:9
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePostCategoryRelations (20210810235620)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210810235620_create_post_category_relations.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "post_category_relations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210810235620_create_post_category_relations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210810235620"]]
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 126.89.127.106 at 2021-08-10 23:59:48 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+Started GET "/" for 126.89.127.106 at 2021-08-10 23:59:52 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (9162.7ms)
+  Rendered homes/top.html.erb within layouts/application (9166.2ms)
+Completed 200 OK in 9789ms (Views: 9768.4ms | ActiveRecord: 0.0ms)
+
+
+  Rendered posts/_lignups.html.erb (6141.5ms)
+  Rendered homes/top.html.erb within layouts/application (6143.3ms)
+Completed 200 OK in 6242ms (Views: 6240.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/category/5" for 126.89.127.106 at 2021-08-11 00:00:07 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category5 as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 126.89.127.106 at 2021-08-11 00:00:08 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (47.7ms)
+Completed 200 OK in 154ms (Views: 133.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 126.89.127.106 at 2021-08-11 00:00:12 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 105ms (Views: 104.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 126.89.127.106 at 2021-08-11 00:00:30 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5wfilT68/5Yy018aDivta4ps/YvxrNhvsfmhKisvxuDC/oip9hk3tAIDd5yzyF7tOzS2g7/Eih6l+SWEbN7QA==", "user"=>{"name"=>"rei", "email"=>"rei@gmail", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rei@gmail"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "rei@gmail"], ["encrypted_password", "$2a$12$32eHsK5LFJJTLwF.TGpmru.1S5pXmC8uwLe2/Zd07mIimpkSXHwyK"], ["name", "rei"], ["created_at", "2021-08-11 00:00:30.870284"], ["updated_at", "2021-08-11 00:00:30.870284"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://ea02b04c34be4e779b1f544a1833c6ff.vfs.cloud9.us-east-1.amazonaws.com/users/1
+Completed 302 Found in 388ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/users/1" for 126.89.127.106 at 2021-08-11 00:00:31 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:11
+  Rendered users/show.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 275ms (Views: 211.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for 126.89.127.106 at 2021-08-11 00:00:37 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_error.html.erb (0.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/new.html.erb:14
+  Rendered posts/new.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 179ms (Views: 166.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-08-11 00:00:53 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (26.8ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 123ms (Views: 119.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (3.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "1"], ["created_at", "2021-08-11 00:03:37.907944"], ["updated_at", "2021-08-11 00:03:37.907944"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "2"], ["created_at", "2021-08-11 00:03:37.923746"], ["updated_at", "2021-08-11 00:03:37.923746"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "3"], ["created_at", "2021-08-11 00:03:37.932882"], ["updated_at", "2021-08-11 00:03:37.932882"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "4"], ["created_at", "2021-08-11 00:03:37.941082"], ["updated_at", "2021-08-11 00:03:37.941082"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "5"], ["created_at", "2021-08-11 00:03:37.952511"], ["updated_at", "2021-08-11 00:03:37.952511"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "6"], ["created_at", "2021-08-11 00:03:37.960542"], ["updated_at", "2021-08-11 00:03:37.960542"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "7"], ["created_at", "2021-08-11 00:03:37.968135"], ["updated_at", "2021-08-11 00:03:37.968135"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "8"], ["created_at", "2021-08-11 00:03:37.977139"], ["updated_at", "2021-08-11 00:03:37.977139"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "9"], ["created_at", "2021-08-11 00:03:37.984881"], ["updated_at", "2021-08-11 00:03:37.984881"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "10"], ["created_at", "2021-08-11 00:03:37.992578"], ["updated_at", "2021-08-11 00:03:37.992578"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "11"], ["created_at", "2021-08-11 00:03:38.000599"], ["updated_at", "2021-08-11 00:03:38.000599"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "12"], ["created_at", "2021-08-11 00:03:38.008140"], ["updated_at", "2021-08-11 00:03:38.008140"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "13"], ["created_at", "2021-08-11 00:03:38.017028"], ["updated_at", "2021-08-11 00:03:38.017028"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "14"], ["created_at", "2021-08-11 00:03:38.024892"], ["updated_at", "2021-08-11 00:03:38.024892"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "15"], ["created_at", "2021-08-11 00:03:38.032570"], ["updated_at", "2021-08-11 00:03:38.032570"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "16"], ["created_at", "2021-08-11 00:03:38.042307"], ["updated_at", "2021-08-11 00:03:38.042307"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "17"], ["created_at", "2021-08-11 00:03:38.048828"], ["updated_at", "2021-08-11 00:03:38.048828"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts" for 126.89.127.106 at 2021-08-11 00:03:55 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (339.9ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (345.5ms)
+Completed 200 OK in 512ms (Views: 485.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for 126.89.127.106 at 2021-08-11 00:03:58 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_error.html.erb (0.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/new.html.erb:14
+  Rendered posts/new.html.erb within layouts/application (120.8ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Could not find the source association(s) "category" or :categories in model PostCategoryRelation. Try 'has_many :categories, :through => :post_category_relations, :source => <name>'. Is it one of ?):
+    13:             <%= f.label :category, 'Category' %><br>
+    14:             <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+    15:               <%= category.label do %>
+    16:                 <%= category.check_box %>
+    17:                 <%= category.text %>
+    18:               <% end %>
+    19:             <% end %>
+  
+app/views/posts/new.html.erb:16:in `block (3 levels) in _app_views_posts_new_html_erb__3283364883771130238_70017751157520'
+app/views/posts/new.html.erb:15:in `block (2 levels) in _app_views_posts_new_html_erb__3283364883771130238_70017751157520'
+app/views/posts/new.html.erb:14:in `block in _app_views_posts_new_html_erb__3283364883771130238_70017751157520'
+app/views/posts/new.html.erb:7:in `_app_views_posts_new_html_erb__3283364883771130238_70017751157520'
+Started GET "/posts/new" for 126.89.127.106 at 2021-08-11 00:05:48 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_error.html.erb (0.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/new.html.erb:14
+  Rendered posts/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 170ms (Views: 146.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/posts" for 126.89.127.106 at 2021-08-11 00:06:38 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ux43cdL/M0LeQQNTM/vbLcZDBwyyUkKbFzoSY7FUW8zzTFRC47ABCuGcxM+jEHbJp3mkrOV2od7YulofX1n77A==", "post"=>{"title"=>"Beach clean", "body"=>"We clean ocean every morning", "category_ids"=>["", "4"], "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f5c8ea50a90 @tempfile=#<Tempfile:/tmp/RackMultipart20210811-4492-1enhrmt.jfif>, @original_filename="ダウンロード.jfif", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"\xE3\x83\x80\xE3\x82\xA6\xE3\x83\xB3\xE3\x83\xAD\xE3\x83\xBC\xE3\x83\x89.jfif\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create New Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/posts_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10
+  [1m[36mPost Create (3.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "image_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Beach clean"], ["body", "We clean ocean every morning"], ["image_id", "7ced8ce0e91b9e63da4d6177c635e350ef630c5fa2d739350a0119b9953b"], ["user_id", 1], ["created_at", "2021-08-11 00:06:38.215627"], ["updated_at", "2021-08-11 00:06:38.215627"]]
+  ↳ app/controllers/posts_controller.rb:10
+  [1m[36mPostCategoryRelation Create (0.1ms)[0m  [1m[32mINSERT INTO "post_category_relations" ("post_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["category_id", 4], ["created_at", "2021-08-11 00:06:38.222051"], ["updated_at", "2021-08-11 00:06:38.222051"]]
+  ↳ app/controllers/posts_controller.rb:10
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:10
+Redirected to https://ea02b04c34be4e779b1f544a1833c6ff.vfs.cloud9.us-east-1.amazonaws.com/posts
+Completed 302 Found in 63ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-08-11 00:06:38 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (52.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:32
+  Rendered posts/index.html.erb within layouts/application (79.4ms)
+Completed 200 OK in 168ms (Views: 164.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/attachments/9ec834c9c141cd08d719b6b62832630fa2f22e7e/store/7ced8ce0e91b9e63da4d6177c635e350ef630c5fa2d739350a0119b9953b/image.jpeg" for 126.89.127.106 at 2021-08-11 00:06:39 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-11 00:06:39 +0000] GET "/9ec834c9c141cd08d719b6b62832630fa2f22e7e/store/7ced8ce0e91b9e63da4d6177c635e350ef630c5fa2d739350a0119b9953b/image.jpeg" 200 4.5ms
+
+Started GET "/posts/category/4" for 126.89.127.106 at 2021-08-11 00:06:49 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category4 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:54
+  Rendering posts/category4.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 4], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "posts"."id" AS t0_r0, "posts"."title" AS t0_r1, "posts"."body" AS t0_r2, "posts"."image_id" AS t0_r3, "posts"."user_id" AS t0_r4, "posts"."created_at" AS t0_r5, "posts"."updated_at" AS t0_r6, "categories"."id" AS t1_r0, "categories"."name" AS t1_r1, "categories"."created_at" AS t1_r2, "categories"."updated_at" AS t1_r3 FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? AND "posts"."id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC[0m  [["category_id", 4], ["id", 1]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_samecategory.html.erb:8
+  Rendered posts/_samecategory.html.erb (19.5ms)
+  Rendered posts/category4.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 107ms (Views: 99.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/attachments/c12c71a250454d3e8dfa17ec9a33670487ca73df/store/7ced8ce0e91b9e63da4d6177c635e350ef630c5fa2d739350a0119b9953b/image" for 126.89.127.106 at 2021-08-11 00:06:50 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-11 00:06:50 +0000] GET "/c12c71a250454d3e8dfa17ec9a33670487ca73df/store/7ced8ce0e91b9e63da4d6177c635e350ef630c5fa2d739350a0119b9953b/image" 200 3.1ms
+
+Started GET "/users/1" for 126.89.127.106 at 2021-08-11 00:07:10 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:11
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 122ms (Views: 114.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/edit" for 126.89.127.106 at 2021-08-11 00:07:13 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 88ms (Views: 82.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for 126.89.127.106 at 2021-08-11 00:07:31 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8tIfM+EwB894MKlw4IqybgMQ+H0WzMPIsq9ozYl064/sRJhHsBBdVWkuwmzgbjH+jco8eoXd3H4O+6mS6Wvi6w==", "user"=>{"name"=>"rei", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007f5c8e43a8e0 @tempfile=#<Tempfile:/tmp/RackMultipart20210811-4492-1n7v12d.jpg>, @original_filename="owl.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"owl.jpg\"\r\nContent-Type: image/jpeg\r\n">, "introduction"=>"Hello!"}, "commit"=>"Update my profile", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "introduction" = ?, "profile_image_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["introduction", "Hello!"], ["profile_image_id", "796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243"], ["updated_at", "2021-08-11 00:07:31.895199"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+Redirected to https://ea02b04c34be4e779b1f544a1833c6ff.vfs.cloud9.us-east-1.amazonaws.com/users/1
+Completed 302 Found in 21ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/users/1" for 126.89.127.106 at 2021-08-11 00:07:32 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:11
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 123ms (Views: 118.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/attachments/721a123a59b8e20f168ab1167968be6ba0204b86/store/fill/100/100/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" for 126.89.127.106 at 2021-08-11 00:07:32 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Error -> You must have ImageMagick or GraphicsMagick installed
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/configuration.rb:139:in `cli'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick.rb:38:in `imagemagick7?'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:135:in `executable'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:110:in `command'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:92:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:38:in `new'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/image.rb:436:in `format'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/refile-mini_magick-0.2.0/lib/refile/mini_magick.rb:134:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/app.rb:57:in `block in <class:App>'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `block in compile!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (3 levels) in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1006:in `route_eval'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (2 levels) in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1035:in `block in process_route'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `process_route'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:985:in `block in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `each'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1098:in `block in dispatch!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1095:in `dispatch!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `block in call!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `call!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:908:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/custom_logger.rb:16:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/xss_header.rb:18:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/path_traversal.rb:16:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/json_csrf.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/frame_options.rb:31:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/null_logger.rb:11:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:194:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1951:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/mapper.rb:48:in `serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:35:in `each'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:35:in `serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/route_set.rb:840:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/tempfile_reaper.rb:15:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:266:in `context'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:260:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/migration.rb:559:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/callbacks.rb:98:in `run_callbacks'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/executor.rb:14:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:22:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:38:in `call_app'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:26:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:28:in `tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:71:in `tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sprockets-rails-3.2.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/method_override.rb:24:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/executor.rb:14:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/static.rb:127:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/engine.rb:524:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/configuration.rb:227:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:706:in `handle_request'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:476:in `process_client'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:334:in `block in run'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Refile::App: [2021-08-11 00:07:32 +0000] GET "/721a123a59b8e20f168ab1167968be6ba0204b86/store/fill/100/100/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" 500 20.4ms
+
+Started GET "/users" for 126.89.127.106 at 2021-08-11 00:07:51 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 81ms (Views: 77.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/attachments/52340f18a346fbebb9b185eb24a1bc7bc764ec37/store/fill/60/60/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" for 126.89.127.106 at 2021-08-11 00:07:51 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Error -> You must have ImageMagick or GraphicsMagick installed
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/configuration.rb:139:in `cli'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick.rb:38:in `imagemagick7?'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:135:in `executable'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:110:in `command'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:92:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:38:in `new'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/image.rb:436:in `format'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/refile-mini_magick-0.2.0/lib/refile/mini_magick.rb:134:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/app.rb:57:in `block in <class:App>'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `block in compile!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (3 levels) in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1006:in `route_eval'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (2 levels) in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1035:in `block in process_route'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `process_route'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:985:in `block in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `each'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1098:in `block in dispatch!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1095:in `dispatch!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `block in call!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `call!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:908:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/custom_logger.rb:16:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/xss_header.rb:18:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/path_traversal.rb:16:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/json_csrf.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/frame_options.rb:31:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/null_logger.rb:11:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:194:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1951:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/mapper.rb:48:in `serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:35:in `each'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:35:in `serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/route_set.rb:840:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/tempfile_reaper.rb:15:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:266:in `context'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:260:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/migration.rb:559:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/callbacks.rb:98:in `run_callbacks'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/executor.rb:14:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:22:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:38:in `call_app'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:26:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:28:in `tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:71:in `tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sprockets-rails-3.2.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/method_override.rb:24:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/executor.rb:14:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/static.rb:127:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/engine.rb:524:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/configuration.rb:227:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:706:in `handle_request'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:476:in `process_client'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:334:in `block in run'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Refile::App: [2021-08-11 00:07:51 +0000] GET "/52340f18a346fbebb9b185eb24a1bc7bc764ec37/store/fill/60/60/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" 500 12.5ms
+
+Started GET "/attachments/721a123a59b8e20f168ab1167968be6ba0204b86/store/fill/100/100/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" for 126.89.127.106 at 2021-08-11 00:07:51 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Error -> You must have ImageMagick or GraphicsMagick installed
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/configuration.rb:139:in `cli'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick.rb:38:in `imagemagick7?'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:135:in `executable'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:110:in `command'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:92:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/tool.rb:38:in `new'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/mini_magick-4.11.0/lib/mini_magick/image.rb:436:in `format'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/refile-mini_magick-0.2.0/lib/refile/mini_magick.rb:134:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/app.rb:57:in `block in <class:App>'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `block in compile!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (3 levels) in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1006:in `route_eval'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (2 levels) in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1035:in `block in process_route'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `process_route'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:985:in `block in route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `each'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `route!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1098:in `block in dispatch!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1095:in `dispatch!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `block in call!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `call!'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:908:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/lib/refile/custom_logger.rb:16:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/xss_header.rb:18:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/path_traversal.rb:16:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/json_csrf.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-protection-2.0.8.1/lib/rack/protection/frame_options.rb:31:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/null_logger.rb:11:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:194:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1951:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/mapper.rb:48:in `serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:35:in `each'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/journey/router.rb:35:in `serve'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/routing/route_set.rb:840:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:36:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:34:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/warden-1.2.9/lib/warden/manager.rb:34:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/tempfile_reaper.rb:15:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/conditional_get.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:266:in `context'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:260:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/migration.rb:559:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/callbacks.rb:98:in `run_callbacks'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/executor.rb:14:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:22:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:38:in `call_app'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:26:in `block in call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:28:in `tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/tagged_logging.rb:71:in `tagged'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/rack/logger.rb:26:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/sprockets-rails-3.2.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/method_override.rb:24:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activesupport-5.2.6/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/executor.rb:14:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.2.6/lib/action_dispatch/middleware/static.rb:127:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.2.6/lib/rails/engine.rb:524:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/configuration.rb:227:in `call'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:706:in `handle_request'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:476:in `process_client'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/server.rb:334:in `block in run'
+Refile::App: /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/puma-3.12.6/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Refile::App: [2021-08-11 00:07:51 +0000] GET "/721a123a59b8e20f168ab1167968be6ba0204b86/store/fill/100/100/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" 500 12.7ms
+
+Started GET "/users/1" for 126.89.127.106 at 2021-08-11 00:30:49 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:11
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 631ms (Views: 584.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/attachments/721a123a59b8e20f168ab1167968be6ba0204b86/store/fill/100/100/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" for 126.89.127.106 at 2021-08-11 00:30:50 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-11 00:30:50 +0000] GET "/721a123a59b8e20f168ab1167968be6ba0204b86/store/fill/100/100/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" 200 91.1ms
+
+Started GET "/posts" for 126.89.127.106 at 2021-08-11 00:30:58 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (29.3ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:32
+  Rendered posts/index.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 136ms (Views: 130.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/attachments/59476fe714a85cb775451b2fe97a03f63d01f9ba/store/fill/50/50/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" for 126.89.127.106 at 2021-08-11 00:30:58 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-11 00:30:58 +0000] GET "/59476fe714a85cb775451b2fe97a03f63d01f9ba/store/fill/50/50/796e29e958d51c68de6d47a59a75a75e321b18f50513e9296d65f7f0c243/profile_image.jpeg" 200 44.3ms
+

@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h1>Welcome to <span id="title"> My SDGs Project!</span></h1>
+  <p>This is a community where people share their SDGs related activities they engage to inspire each other.<br>
+  Take a look at what people do in their daily lives.</p>
+  
+  <%= render 'posts/lignups' %>
+  
+  <h2>Join us from here</h2>
+  <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
+  
+  <h2>Already our member?</h2>
+  <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
+
+</div>
