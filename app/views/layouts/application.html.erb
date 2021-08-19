@@ -71,10 +71,15 @@
     </main>
     <footer class="bg-light pt-5 pb-4">
       <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-4">
+        <div class="row justify-content-center">
+          <div class="col">
             <p>To connect with people with same mind</p>
-            <%= image_tag('logo_transparent_100') %>
+              <p id="logos">
+              <%= image_tag('logo_transparent_100') %>
+              <%= image_tag('emblem') %><br>
+              （My SDGs Project／私たち）は持続可能な開発目標（SDGs）を支援しています。<br>
+              &copy; Yuki Adachi
+              </p>
           </div>
 
         </div>
@@ -82,3 +87,9 @@
     </footer>
   </body>
 </html>
+
+<style>
+  #logos {
+    text-align: center;
+  }
+</style>
