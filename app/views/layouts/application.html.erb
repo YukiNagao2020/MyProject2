@@ -15,19 +15,22 @@
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      
+
        <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand p-3" href="/"><%= image_tag('mysdg.png') %></a>
+          <a class="navbar-brand p-3" href="/"><%= image_tag('logo_transparent_100.png') %></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            
+
           <ul class="navbar-nav ml-auto">
            <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "Home", root_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "About", about_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to "Activities", posts_path, class:"nav-link" %>
@@ -49,7 +52,7 @@
               <%= link_to "Home", root_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "About", root_path, class:"nav-link" %>
+              <%= link_to "About", about_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
@@ -66,14 +69,14 @@
     <main class="mb-auto">
     <%= yield %>
     </main>
-    <footer class="bg-dark text-white pt-5 pb-4">
+    <footer class="bg-light pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-4">
             <p>To connect with people with same mind</p>
-            <%= image_tag('mysdg.png') %>
+            <%= image_tag('logo_transparent_100') %>
           </div>
-       
+
         </div>
       </div>
     </footer>

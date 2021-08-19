@@ -1,15 +1,51 @@
 <div class="container">
 
-  <h1>Welcome to <span id="title"> My SDGs Project!</span></h1>
-  <p>This is a community where people share their SDGs related activities they engage to inspire each other.<br>
-  Take a look at what people do in their daily lives.</p>
+  <div class="title">
+    <h1>Welcome to <span id="title"> My SDGs Project!</span></h1>
+    <p>「マイ　エスディージーズ　プロジェクト」にようこそ</p>
+  </div>
+  <p>
+      このサイトは、SDGs(Sustainable Development Goals 「「持続可能な開発目標」にかかわる日常の些細な活動をシェアしあう場所です。<br>
+    <span>This is a community where people share their SDGs related activities they engage to inspire each other.<br>
+    Take a look at what people do in their daily lives.</span>
+  </p>
   
-  <%= render 'posts/lignups' %>
   
-  <h2>Join us from here</h2>
-  <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
+  <div class="logos">
+    <%= render 'posts/lignups' %>
+  </div>
   
-  <h2>Already our member?</h2>
-  <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
-
+  <div class="sign-up">
+    <h2>Join us from here</h2>
+    <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
+    
+    <h2>Already our member?</h2>
+    <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
+  </div>
 </div>
+
+<style>
+
+  .title {
+    margin-bottom: 50px;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .logos {
+    margin-bottom: 50px;
+  }
+  
+  .sign-up {
+    text-align: center;
+  }
+  span {
+    color: green;
+  }
+</style>
