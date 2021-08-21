@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>QUALITY EDUCATION</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-04.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">質の高い教育をみんなに</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">すべての人に包摂的かつ公平で質の高い教育を提供し、生涯学習の機会を促進する</h5>
+          <p>すべての人に包摂的で質の高い教育を普及させるという目標は、持続可能な開発にとって、教育が最も有効かつ効果的な手段であるということを再認識するものです。この目標は、2030年までにすべての男女が無償で初等・中等教育を修了することを目指しています。また、職業訓練の平等な機会を提供し、ジェンダーと貧富による格差を解消することで、全世界で質の高い高等教育機会を提供することも、この目標の一つの狙いです。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #8b0000;
+  }
+</style>

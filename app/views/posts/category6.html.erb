@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>CLEAN WATER AND SANITATION</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-06.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">安全な水とトイレを世界中に</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">すべての人に水と衛生へのアクセスと持続可能な管理を確保する</h5>
+          <p>水不足の影響は、全世界の人の40%に及んでいますが、この驚くべき数字は、気候変動の影響によって地球の気温が上昇するにつれ、さらに大きくなることが予測されています。2050年までに、4人に1人以上が慢性的な水不足の影響を受ける可能性が高いと見られています。水不足を緩和するためには、森林や山地、湿原、河川など、水関連の生態系の保護と回復、及び水の利用効率の改善が欠かせません。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #0000ff;
+  }
+</style>

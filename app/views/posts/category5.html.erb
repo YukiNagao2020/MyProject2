@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>GENDER EQUALITY</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-05.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">ジェンダー平等を実現しよう</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">ジェンダーの平等を達成し、すべての女性と女児のエンパワーメントを図る</h5>
+          <p>女性のエンパワメントとジェンダーの平等は、持続可能な開発を促進するうえで欠かせません。女性と女児に対するあらゆる形態の差別に終止符を打つことは、基本的人権であると同時に、他のすべての開発領域に対して波及効果があります。公職に就く女性の数は前例にないほど増加していますが、あらゆる地域でより多くの女性リーダーが生まれれば、ジェンダーの平等促進に向けた政策と法律制定の強化に役立つことでしょう。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #ff5349;
+  }
+</style>
