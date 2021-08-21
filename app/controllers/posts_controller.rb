@@ -39,6 +39,7 @@ class PostsController < ApplicationController
   def category1
     @category = Category.find(1)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
+    # @posting = Post.find(params[:id])
   end  
   
   def category2

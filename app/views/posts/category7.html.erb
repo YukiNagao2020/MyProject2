@@ -1,16 +1,32 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>AFFORDABLE AND CLEAN ENERGY</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-07.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">エネルギーをみんなにそしてクリーンに</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">すべての人に手ごろで信頼でき、持続可能かつ近代的なエネルギーへのアクセスを確保する</h5>
+          <p>化石燃料に依存し、温室効果ガスの排出量増大をもたらすグローバル経済は、私たちの気候システムに大きな変化をもたらしています。この変化は、目に見える形で世界中に影響を及ぼしています。
+
+しかし、代替エネルギーの利用を促す新たな潮流が生まれており、2011年には、再生可能なエネルギーが全世界のエネルギー供給の20%以上を占めるようになりました。とはいえ、今でも5人に1人が電力を利用できておらず、需要が増え続ける中で、全世界で再生可能エネルギーの生産を大幅に拡大する必要が生じています。
+
+2030年までに手ごろな電力を完全に普及させるためには、太陽光や風力、地熱などのクリーンなエネルギー源に投資しなければなりません。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #ffff00;
+  }
+</style>
