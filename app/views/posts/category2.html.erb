@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>ZERO HUNGER</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-02.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">飢餓をゼロに</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">飢餓に終止符を打ち、食料の安定確保と栄養状態の改善を達成するとともに、持続可能な農業を推進する</h5>
+          <p>そのためには、小規模農家の生活と能力を向上させ、土地や技術、市場への平等なアクセスを与えることにより、持続可能な農業規範を推進しなければなりません。また、国際協力によってインフラと技術への投資を確保し、農業生産性を改善する必要もあります。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
 
+<style>
+  h5 {
+    color: #D0AF4C;
+  }
+</style>

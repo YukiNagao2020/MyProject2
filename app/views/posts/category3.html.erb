@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>GOOD HEALTH AND WELL-BEING</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-03.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">すべての人に健康と福祉を</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">あらゆる年齢のすべての人の健康的な生活を確保し、福祉を推進する</h5>
+          <p>今も5歳の誕生日を迎えられずに命を落とす子どもは依然として600万人を超えています。毎日、はしかや結核など、予防可能な病気で1万6000人の子どもが命を失っています。また妊娠と出産によって生じる合併症で死亡する女性の数は1日数百人を数えています。これらの死は、予防と治療、教育、予防接種キャンペーン、リプロダクティブ・ヘルス（性と生殖に関する健康）関連のケアやサービスを受けることによって回避することができます。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #4CBB17;
+  }
+</style>
