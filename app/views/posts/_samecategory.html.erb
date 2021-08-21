@@ -3,7 +3,11 @@
         <div class="card_item">
           <div class="post-body">
             <%= attachment_image_tag post, :image %>
-            <p>Title：<%= post.title %></p>
+
+            <%= link_to post_path(post) do %>
+              <p>Title：<%= post.title %></p>
+            <% end %>
+
             <p>Contents of Activities：<%= post.body %></p>
             <p>Posted by：<%= post.user.name %></p>
              <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
@@ -15,4 +19,6 @@
         </div>
       <% end %>
     </div>
-  
+
+
+

@@ -1,15 +1,29 @@
 <div class="container">
-  <img src="/assets/Inverted-01.png">
-  <div class="card border-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body text-secondary">
-      <h5 class="card-title">Secondary card title</h5>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-01.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">貧困をなくそう</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">あらゆる場所で、あらゆる形態の貧困に終止符を打つ</h5>
+          <p>脆弱な状況の中で暮らす人々に対象を絞り、基本的な資源とサービスへのアクセスを改善し、紛争や気候変動関連の災害で被災したコミュニティを支援することが必要です。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
       <%= render 'posts/samecategory', post: @post %>
-    </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><p><%= paginate @post %></p></li>
+        </ul>
+      </nav>
   </div>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item"><p><%= paginate @post %></p></li>
-      </ul>
-    </nav>
 </div>
+
+
+<style>
+  h5 {
+    color: red;
+  }
+</style>
