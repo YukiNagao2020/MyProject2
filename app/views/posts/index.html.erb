@@ -31,6 +31,7 @@
                 <p class="card-text">
                   <p>Posted by：<%= link_to post.user.name, user_path(post.user) %></p>
                   <p> <%= attachment_image_tag post.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></p>
+                  <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
                 </p>
               </div>
             </div>
@@ -38,7 +39,9 @@
 
           <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li class="page-item"><p><%= paginate @posts %></p></li>
+              <li class="page-item">
+                <p><%= paginate @posts %></p>
+              </li>
             </ul>
           </nav>
         </div>
