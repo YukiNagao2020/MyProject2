@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
   get 'about', to: 'homes#about'
-  resources :posts
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
+  end
   resources :users, only: [:index, :show, :edit, :update]
 
   get 'posts/category/1', to: 'posts#category1', as: 'category1'
