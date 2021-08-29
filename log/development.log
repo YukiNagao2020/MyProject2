@@ -9266,3 +9266,75 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 60ms (Views: 57.5ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/users" for 126.89.127.106 at 2021-08-29 09:41:59 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (23.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 459ms (Views: 450.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 126.89.127.106 at 2021-08-29 09:46:18 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/index.html.erb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 93ms (Views: 91.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for 126.89.127.106 at 2021-08-29 09:46:27 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/_info.html.erb:24
+  Rendered users/_info.html.erb (5.6ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/users/show.html.erb:20
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/users/show.html.erb:20
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/users/show.html.erb:20
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/users/show.html.erb:20
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 94ms (Views: 83.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/attachments/79979c4dd5a56e0a677c91ee9d7f9d1cf6366e79/store/2ad6cfa84fb924d0257d11f5ed2a279262334cde53d313e82015dcc9e178/image.jpeg" for 126.89.127.106 at 2021-08-29 09:46:27 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/b018db23274c70889be21fe951a3b6bb71d4ab66/store/ac3c3bfe77bf25db3b0171e53beaf34d80861a9f5fb535cc03a3b03bcb11/image.jpeg" for 126.89.127.106 at 2021-08-29 09:46:27 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/3375f85e6d2e890194da824cfa2ca44f6e83cb74/store/3d564ab6ae71a8ee47786f52294460553e9b7238c950c59efd11980cf4b0/image.jpeg" for 126.89.127.106 at 2021-08-29 09:46:27 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-29 09:46:27 +0000] GET "/b018db23274c70889be21fe951a3b6bb71d4ab66/store/ac3c3bfe77bf25db3b0171e53beaf34d80861a9f5fb535cc03a3b03bcb11/image.jpeg" 200 3.5ms
+
+Refile::App: [2021-08-29 09:46:27 +0000] GET "/79979c4dd5a56e0a677c91ee9d7f9d1cf6366e79/store/2ad6cfa84fb924d0257d11f5ed2a279262334cde53d313e82015dcc9e178/image.jpeg" 200 10.2ms
+
+Refile::App: [2021-08-29 09:46:27 +0000] GET "/3375f85e6d2e890194da824cfa2ca44f6e83cb74/store/3d564ab6ae71a8ee47786f52294460553e9b7238c950c59efd11980cf4b0/image.jpeg" 200 3.5ms
+
