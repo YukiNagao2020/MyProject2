@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'relationships/create'
+  get 'relationships/destroy'
   devise_for :users
   root to: 'homes#top'
   get 'about', to: 'homes#about'
@@ -7,7 +9,11 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
+  end  
 
   get 'posts/category/1', to: 'posts#category1', as: 'category1'
   get 'posts/category/2', to: 'posts#category2', as: 'category2'
