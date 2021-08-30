@@ -63,23 +63,21 @@
           <% end %>
           </ul>
          </div>
-         
-         <div>
-          <% if user_signed_in? %>
-            <%= form_with url:search_path, method: :get, local: true do |f| %>
-              <%= f.text_field 'search[value]' %>
-              <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
-              <%= f.select 'search[how]', options_for_select({ "complete match" => "match", "partial match" => "partial"  }) %>
-              <%= f.submit :"検索" %>
-            <% end %>
-          <% end %>
-          </div>
-          
         </div>
       </nav>
       
      
-          
+        <div class="container search">
+          <% if user_signed_in? %>
+            <%= form_with url:search_path, method: :get, local: true do |f| %>
+              <%= f.submit :"Search for=>>", class:"btn btn-outline-primary btn-sm"%>
+              <%= f.text_field 'search[value]' %>
+              <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
+              <%= f.select 'search[how]', options_for_select({ "complete match" => "match", "partial match" => "partial"  }) %>
+              
+            <% end %>
+          <% end %>
+        </div>  
    
      
       
@@ -112,4 +110,11 @@
   #logos {
     text-align: center;
   }
+  
+  .search {
+    text-align: right;
+    margin-bottom: 20px;
+    }
+    
+    
 </style>
