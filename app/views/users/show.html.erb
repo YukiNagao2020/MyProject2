@@ -1,10 +1,13 @@
 <div class="container">
   <div class="profile-container">
     <h3 class="profile-name"><%= @user.name %></h3>
-     <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-      <% if @user.id == current_user.id %>
-      <p><%= link_to "Edit my profile", edit_user_path(@user) %></p>
-    <% end %>
+     <!--<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>-->
+     
+          <%= render 'info', user: @user %>
+      
+      <!--<% if @user.id == current_user.id %>-->
+      <!--  <p><%= link_to "Edit my profile", edit_user_path(@user) %></p>-->
+      <!--<% end %>-->
   
   </div>
   
