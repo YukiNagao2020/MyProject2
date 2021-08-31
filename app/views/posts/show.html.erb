@@ -1,53 +1,103 @@
-<div class="container">
-  <div class="post-body">
-    <%= attachment_image_tag @post, :image, format: 'jpeg', size: "300x300" %>
-    <p>Title：<%= @post.title %></p>
-    <p>Category: 
-      <% @post.categories.each do |category| %>
-      <%= link_to category.name, category_path(category) %>
-      <% end %>
-    </p>
-    <p>Contents of Activities：<%= @post.body %></p>
-    <p>Posted by：<%= @post.user.name %></p>
-     <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
-    <p>Posted on：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
-    <% if @post.user == current_user %>
-      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure？' }, class: 'btn-sm btn-danger' %>
-    <% end %>
-  </div>
-  
-   <% if @post.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_favorites_path(@post), method: :delete do %>
-        ♥<%= @post.favorites.count %> Likes
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_favorites_path(@post), method: :post do %>
-        ♡<%= @post.favorites.count %> Likes
-      <% end %>
-    </p>
-  <% end %>
-  
-  <div class="comments">
-<p>Comments：<%= @post.post_comments.count %></p>
-<% @post.post_comments.each do |post_comment| %>
-
-  <%= post_comment.user.name %>
-  <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-  
-  <% if post_comment.user == current_user %>
-    <div class="comment-delete">
-      <%= link_to "Delete comment", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+<div class="container main">
+  <div class="row">
+    <div class="col-md-6 image">
+      <%= attachment_image_tag @post, :image, format: 'jpeg', size: "300x300" %>
     </div>
-  <% end %>
-<% end %>
+    <div class="col-md-6">
+      <p class="title">Title：<%= @post.title %></p>
+      <p>Category: 
+        <% @post.categories.each do |category| %>
+        <%= link_to category.name, category_path(category) %>
+        <% end %>
+      </p>
+      <p>Contents of Activities：<%= @post.body %></p>
+      <p>Posted by：<font size="5"><%= link_to @post.user.name, user_path(@post.user) %></font>&nbsp;
+        <span class="date">on <%= @post.created_at.strftime('%Y/%m/%d') %></span>
+      </p>
+       <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>&nbsp;&nbsp;
+      
+      <% if @post.favorited_by?(current_user) %>
+        <span>
+          <%= link_to post_favorites_path(@post), method: :delete do %>
+            ♥<%= @post.favorites.count %> Likes
+          <% end %>
+        </span>
+        <% else %>
+        <span>
+          <%= link_to post_favorites_path(@post), method: :post do %>
+            ♡<%= @post.favorites.count %> Likes
+          <% end %>
+        </span>
+        <% end %>&nbsp;&nbsp;
+        
+        <% if @post.user == current_user %>
+          <%= link_to "Delete this post", post_path(@post), method: :delete, data: { confirm: 'Are you sure？' }, class: 'btn btn-outline-danger btn-sm' %>
+        <% end %>
+    </div>
+  </div>
+
+  
+  
+  <div class="row bottom">
+    <div class="col-md-6">
+      <div class="comments">
+      <h4><span class="bg-light">Comments：<%= @post.post_comments.count %></span></h4>
+      <% @post.post_comments.each do |post_comment| %>
+        <p id="comment"><%= post_comment.comment %></p>
+        <p id="comment_name">Commented by : <%= post_comment.user.name %><span>&nbsp;on <%= post_comment.created_at.strftime('%Y/%m/%d') %></span></p>&nbsp;
+        
+        <% if post_comment.user == current_user %>
+          <div class="comment-delete">
+            <%= link_to "Delete this comment", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: 'btn btn-outline-danger btn-sm' %>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-md-6"> 
+      <div class="new-comment">
+      <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
+        <h3><span class="bg-light">New Post</span></h3>
+        <%= f.text_area :comment, rows:7,placeholder: "write comments here" %>
+        <p><%= f.submit "Post a new comment", class:"btn btn-outline-primary btn-lg post-comment" %></p>
+        
+      <% end %>
+      </div>
+    </div> 
 </div>
-<div class="new-comment">
-<%= form_with(model:[@post, @post_comment], local: true) do |f| %>
-  <%= f.text_area :comment, rows:'5',placeholder: "write comments here" %>
-  <%= f.submit "Post a comment" %>
-<% end %>
 </div>
-</div>
+
+
+
+<style> 
+
+  .main {
+    margin-top: 30px;
+  }
+  .image {
+    text-align: center;
+  }
+  .date {
+    margin-top: 20px;
+  }
+  
+  .title {
+    margin-top: 20px;
+  }
+  
+  .bottom {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #comment {
+    font-size: 30px;
+  }
+  
+  .new-comment {
+    margin-top: 20px;
+  }
+  .post-comment {
+    margin-top: 20px;
+  }
+</style>
