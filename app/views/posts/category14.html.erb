@@ -1,16 +1,32 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>LIFE BELOW WATER</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-14.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">海の豊かさを守ろう</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">海洋と海洋資源を持続可能な開発に向けて保全し、持続可能な形で利用する</h5>
+          <p>世界の海洋はその水温、化学的性質、海流および生物を通じて、地球を人類が住める場所にするシステムを構築しています。この極めて重要な資源をどう管理するかは、人類全体にとって、そして気候変動の影響への対策にとって、本質的な課題となっています。
+
+30億人以上が、海洋と沿岸の生物多様性を頼りに生計を立てています。海洋はまた、人間が作り出す二酸化炭素の約30%を吸収し、産業革命以来、海洋酸性化は26%進んでいます。陸上からの排出が主原因である海洋汚染は危険な水準に達し、海洋1平方キロメートル当たり平均で1万3000個のプラスチックごみが見つかっています。
+
+持続可能な開発目標（SDGs）は、海洋と沿岸の生態系を持続可能な形で管理し、陸上活動に由来する汚染から守ると共に、海洋酸性化の影響に取り組んでいます。国際法を通じて、海洋資源の保全と持続可能な利用を強化することも、私たちの海洋が直面する課題の解決に役立ちます。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: blue;
+  }
+</style>

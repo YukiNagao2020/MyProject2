@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>CLIMATE ACTION</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-13.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">気候変動に具体的な対策を</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">気候変動とその影響に立ち向かうため、緊急対策を取る</h5>
+          <p>気候変動の深刻な影響を目の当たりにしていない国はありません。温室効果ガス排出量は増加の一途をたどり、現在では1990年と比較して50%以上増えています。しかも、地球温暖化は私たちの気候システムに長期的な変化を及ぼしており、私たちが今すぐ対策を講じなければ、取り返しのつかない結果となる可能性があります。内陸国や島嶼国など、影響を受けやすい地域の強靭性と適応能力を強化する一方で、意識を高め、国の政策や戦略に気候対策を盛り込む取り組みも必要です。政治的な意志と幅広い技術を活用すれば、地球の平均気温上昇を産業革命以前の水準から2℃以内に抑えることができます。そのためには、早急に団結して行動を起こす必要があります。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #006400;
+  }
+</style>

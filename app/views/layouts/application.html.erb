@@ -65,8 +65,8 @@
          </div>
         </div>
       </nav>
-      
-     
+
+
         <div class="container search">
           <% if user_signed_in? %>
             <%= form_with url:search_path, method: :get, local: true do |f| %>
@@ -74,13 +74,13 @@
               <%= f.text_field 'search[value]' %>
               <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
               <%= f.select 'search[how]', options_for_select({ "complete match" => "match", "partial match" => "partial"  }) %>
-              
+
             <% end %>
           <% end %>
-        </div>  
-   
-     
-      
+        </div>
+
+
+
     </header>
     <main class="mb-auto">
     <%= yield %>
@@ -95,7 +95,7 @@
               <%= image_tag('emblem') %><br>
               （My SDGs Project／私たち）は持続可能な開発目標（SDGs）を支援しています。
               <a href="https://www.unic.or.jp/files/SDG_Guidelines_AUG_2019_Final_ja.pdf" target="_blank" rel="norefferrer">SDGs ロゴ使用ガイドライン</a><br>
-              
+
               &copy; Yuki Adachi
               </p>
           </div>
@@ -110,11 +110,11 @@
   #logos {
     text-align: center;
   }
-  
+
   .search {
     text-align: right;
     margin-bottom: 20px;
     }
-    
-    
+
+
 </style>
