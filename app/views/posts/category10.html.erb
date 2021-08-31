@@ -1,16 +1,30 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>REDUCED INEQUALITIES</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-10.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">人や国の不平等をなくそう</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">国内および国家間の格差を是正する</h5>
+          <p>世界の最富裕層の10％が全世界の所得の40％近くを占有しています。こうした格差拡大は、性別、人種、民族にかかわらず、最低所得者層のエンパワメントを図るとともに、すべての人の経済的包摂を推進するために、健全な政策の採用を求める行動を起こす必要があります。
+
+所得格差は、グローバルな解決を要するグローバルな問題です。問題の解決には、金融市場・機関の規制と監視を改善し、必要性が最も大きい地域に対する開発援助と外国直接投資を促さなければなりません。安全な移住を促進し、人々の移動性を高めることも、格差拡大を食い止めるうえで重要となります。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #FF00FF;
+  }
+</style>

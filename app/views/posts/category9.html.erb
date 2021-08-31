@@ -1,16 +1,30 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>INDUSTRY, INNOVATION AND INFRASTRUCTURE</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-09.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">産業と技術革新の基盤をつくろう</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">強靭なインフラを整備し、包摂的で持続可能な産業化を推進するとともに、技術革新の拡大を図る</h5>
+          <p>技術進歩は、新たな雇用機会の提供やエネルギー効率の改善など、経済面と環境面双方の課題の持続的な解決策を見出すうえでも重要となっています。包括的で持続可能な産業を推進し、科学的研究と技術革新に投資することはいずれも、持続可能な開発を促進するための重要な手段となります。
+
+今でも40億人がインターネットを利用できませんが、その90%は開発途上地域に暮らしています。情報と知識への平等なアクセスを確保し、その結果として技術革新と起業を促進するためには、このデジタル格差の解消が欠かせません。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: orange;
+  }
+</style>
