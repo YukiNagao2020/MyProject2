@@ -36,23 +36,31 @@
               </div>
             </div>
           <% end %>
+          
+        
+         
 
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <p><%= paginate @posts %></p>
-              </li>
-            </ul>
-          </nav>
         </div>
+      </div>
+           <div id="pagination">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <p><%= paginate @posts %></p>
+                </li>
+              </ul>
+            </nav>
+          </div>
      </div>
-     </div>
+  
   </div>
 </div>
 
 <style>
   .heading {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 50px;
   }
+
+
 </style>
