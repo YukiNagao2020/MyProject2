@@ -3,7 +3,7 @@
     <div class="col-md-6 image">
       <%= attachment_image_tag @post, :image, format: 'jpeg', size: "300x300" %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" id="post_<%= @post.id %>">
       <p class="title">Title：<%= @post.title %></p>
       <p>Category: 
         <% @post.categories.each do |category| %>
@@ -16,19 +16,7 @@
       </p>
        <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>&nbsp;&nbsp;
       
-      <% if @post.favorited_by?(current_user) %>
-        <span>
-          <%= link_to post_favorites_path(@post), method: :delete do %>
-            ♥<%= @post.favorites.count %> Likes
-          <% end %>
-        </span>
-        <% else %>
-        <span>
-          <%= link_to post_favorites_path(@post), method: :post do %>
-            ♡<%= @post.favorites.count %> Likes
-          <% end %>
-        </span>
-        <% end %>&nbsp;&nbsp;
+        <span class="favorite-btn"><%= render "favorites/favorite-btn" %></span>
         
         <% if @post.user == current_user %>
           <%= link_to "Delete this post", post_path(@post), method: :delete, data: { confirm: 'Are you sure？' }, class: 'btn btn-outline-danger btn-sm' %>
