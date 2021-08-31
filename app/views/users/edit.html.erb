@@ -1,11 +1,13 @@
-<h2>Edit My Profile</h2>
-<%= form_with model:@user, local:true do |f| %>
-  <label for="inputName">Name</label><br>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%><br>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%><br>
-  <label for="inputImage">Profile Image</label><br>
-  <%= f.attachment_field :profile_image, placeholder: "Profile Photo" %><br>
-  <label>About me</label>
-  <%= f.text_area :introduction, placeholder:"Introduction" %><br>
-  <%= f.submit "Update my profile" %>
-<% end %>
+<div class="container">
+  <h2>Edit My Profile</h2>
+  <%= form_with model:@user, local:true do |f| %>
+    <label for="inputName">Name</label><br>
+    <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%><br>
+    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%><br>
+    <label for="inputImage">Profile Image</label><br>
+    <%= f.attachment_field :profile_image, placeholder: "Profile Photo" %><br>
+    <label>About me</label>
+    <%= f.text_area :introduction, placeholder:"Introduction" %><br>
+    <%= f.submit "Update my profile" %>
+  <% end %>
+</div>
