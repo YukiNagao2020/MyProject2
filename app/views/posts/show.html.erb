@@ -46,7 +46,7 @@
       <div class="new-comment">
       <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
         <h3><span class="bg-light">New Post</span></h3>
-        <%= f.text_area :comment, rows:7,placeholder: "write comments here" %>
+        <%= f.text_area :comment, rows:7,cols:40,placeholder: "write comments here" %>
         <p><%= f.submit "Post a new comment", class:"btn btn-outline-primary btn-lg post-comment" %></p>
         
       <% end %>
