@@ -1,16 +1,28 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>DECENT WORK AND ECONOMIC GROWTH</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-08.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">働きがいも経済成長も</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">すべての人のための持続的、包摂的かつ持続可能な経済成長、生産的な完全雇用およびディーセント・ワーク（働きがいのある人間らしい仕事）を推進する</h5>
+          <p>持続可能な開発目標（SDGs）は、生産性の向上と技術革新により、持続的な経済成長を促進することを狙いとしています。これを達成するためには、起業と雇用創出を促す政策の推進だけでなく、強制労働や奴隷制、人身取引を根絶するための効果的な措置を取ることも重要です。こうしたターゲットに留意しつつ、2030年までにすべての女性と男性の完全かつ生産的な雇用とディーセント・ワーク（働きがいのある人間らしい仕事）を達成することを目標としています。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #800020;
+  }
+</style>

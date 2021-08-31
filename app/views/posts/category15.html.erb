@@ -1,16 +1,32 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>LIFE ON LAND</strong></p>
-    </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/assets/Inverted-15.png">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">陸の豊かさを守ろう</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">陸上生態系の保護、回復および持続可能な利用の推進、森林の持続可能な管理、砂漠化への対処、土地劣化の阻止および逆転、ならびに生物多様性損失の阻止を図る</h5>
+            <p>人間の生命と生活は海洋だけでなく、陸地にも支えられています。植物は人間の食料の80%を提供しています、また、私たちは重要な経済資源、そして開発の手段として、農業に依存しています。森林は地表の30%を占め、数百万の生物種にとって必須の生息地や、きれいな空気と水の重要な供給源を提供するだけでなく、気候変動への対処においても不可欠な役割を担っています。
+
+現在、地球はかつてない土地の劣化に直面し、耕作地の損失は歴史上のペースと比べて30倍から35倍で進んでいます。干ばつや砂漠化も年々、深刻化し、全世界で1200万ヘクタールの農地が消失し、貧しいコミュニティに影響が及んでいます。確認されている8300の動物種のうち、8%は絶滅し、22%が絶滅の危険にさらされています。
+
+持続可能な開発目標（SDGs）は、森林や湿地、乾燥地、産地などの陸上生態系を保全し、2020年までにその利用回復を狙いとしています。森林の持続可能な管理を推進し、砂漠化を食い止めることも、気候変動の影響の緩和に欠かせません。地球上の共通遺産の一部である自然の生息地と生物多様性の損失を軽減するためには、今すぐ対策を講じなければなりません。</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+      <%= render 'posts/samecategory', post: @post %>
+      </div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item"><p><%= paginate @post %></p></li>
         </ul>
       </nav>
   </div>
+</div>
+
+<style>
+  h5 {
+    color: #32CD32;
+  }
+</style>
