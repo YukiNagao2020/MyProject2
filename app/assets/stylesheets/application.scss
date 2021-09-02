@@ -25,12 +25,19 @@
    box-sizing: border-box;
  }
  
+ 
  header {
   margin-bottom: 10px;
+  background: linear-gradient(180deg, #f7ff59, #f8ff67, #f8ff73, #f9ff80, #faff8b, #faff96, #fbffa1, #fbffac, #fcffb7, #fcffc1, #fdffcc, #fdffd6);
+ }
+ 
+ main {
+  background: linear-gradient(330deg, #c2dbff, #bfdfff, #bde3ff, #bce6ff, #bbeaff, #bbedff, #bbf0ff, #bdf4ff, #bff7ff, #c1faff, #c5fcfe, #c9fffc);
  }
  
  footer {
   margin-top: 10px;
+  background: linear-gradient(180deg, #f7ff59, #f8ff67, #f8ff73, #f9ff80, #faff8b, #faff96, #fbffa1, #fbffac, #fcffb7, #fcffc1, #fdffcc, #fdffd6);
  }
  
  h1, h2 {
