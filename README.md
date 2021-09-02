@@ -24,7 +24,7 @@ SNS形式のコミュニケーションに慣れている若者世代を中心�
 https://docs.google.com/spreadsheets/d/1ttUK1InJhLEdnHwH3Ajx4zDlUj_5fydomduvODD9zTI/edit#gid=0
 
 ## ER図
-https://drive.google.com/drive/my-drive
+https://drive.google.com/file/d/1PCZ1Yn_JmxxE3qxafY4HPOPRwnjnI0Kl/view?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
