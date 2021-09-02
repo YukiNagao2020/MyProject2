@@ -23,6 +23,9 @@ SNS形式のコミュニケーションに慣れている若者世代を中心�
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ttUK1InJhLEdnHwH3Ajx4zDlUj_5fydomduvODD9zTI/edit#gid=0
 
+## ER図
+https://app.diagrams.net/#G15l5kT0vNwmF2kS_sJ4k8uFsQ0FBAcC2L
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
