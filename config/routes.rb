@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end  
-
+  
+  # DM用
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
+  
   get 'posts/category/1', to: 'posts#category1', as: 'category1'
   get 'posts/category/2', to: 'posts#category2', as: 'category2'
   get 'posts/category/3', to: 'posts#category3', as: 'category3'

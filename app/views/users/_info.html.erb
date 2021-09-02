@@ -28,9 +28,24 @@
       <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
     <% end %>
   <% else %>
+  
     <% if @user.id == current_user.id %>
       <%= link_to 'Edit my profile',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
-    <% end %>
+      
+      <!--DM用-->
+    <!--  <% else %>-->
+    <!--    <% if @isRoom == true %>-->
+    <!--      <p><a href="/rooms/<%= @roomId %>">チャットへ</a>-->
+    <!--    <% else %>-->
+    <!--      <%= form_for @room do |f| %>-->
+    <!--        <%= fields_for @entry do |e| %>-->
+    <!--          <%= e.hidden_field :user_id, :value=> @user.id %>-->
+    <!--        <% end %>-->
+    <!--        <%= f.submit "チャットを始める" %>-->
+    <!--      <% end %>-->
+    <!--    <% end %>-->
+    <!--<% end %>-->
+    
   <% end %>
 </div>
 
