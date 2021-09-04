@@ -69,3 +69,4 @@ gem 'kaminari','~> 1.2.1'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'devise-i18n'
