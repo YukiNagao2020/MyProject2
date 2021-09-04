@@ -48,7 +48,7 @@
         <div class="container search">
           <% if user_signed_in? %>
             <%= form_with url:search_path, method: :get, local: true do |f| %>
-              <%= f.submit :"Search for=>>", class:"btn btn-outline-primary btn-sm"%>
+              <%= f.submit :"Search for=>>", class:"btn btn-primary btn-sm"%>
               <%= f.text_field 'search[value]' %>
               <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
               <%= f.select 'search[how]', options_for_select({ "complete match" => "match", "partial match" => "partial"  }) %>
@@ -61,7 +61,13 @@
 
     </header>
     <main class="mb-auto">
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+      </div>
     <%= yield %>
+    
     </main>
     <footer class="bg-light pt-5 pb-4">
       <div class="container">
@@ -93,6 +99,20 @@
     text-align: right;
     margin-bottom: 20px;
     }
+ 
+   #flash {
+  text-align: center;
+ } 
+ .notice {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
 
+.alert {
+  background-color: red;
+  color: #white;
+  text-align: center;
+}
 
 </style>
