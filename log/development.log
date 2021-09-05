@@ -26984,3 +26984,1083 @@ Processing by HomesController#about as HTML
 Completed 200 OK in 132ms (Views: 131.1ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20210905014638)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210905014638_create_contacts.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "message" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210905014638_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210905014638"]]
+  ↳ bin/rails:9
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/inquiry/thanks" for 126.89.127.106 at 2021-09-05 02:26:48 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [POST] "/inquiry/thanks"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 02:26:59 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (765.2ms)
+Completed 500 Internal Server Error in 826ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `fi' for #<#<Class:0x0000000004049918>:0x0000000004036b38>
+Did you mean?  f):
+    4:        <%= f.text_field :name %>
+    5:       <%= f.label :"メールアドレス"%>
+    6:        <%= f.email_field :email %>
+    7:       <%= fi.label :"お問合せ内容"%>
+    8:        <%= f.text_area :message %>
+    9:     <div>
+   10:       <%= f.submit "送信"%>
+  
+app/views/contacts/new.html.erb:7:in `block in _app_views_contacts_new_html_erb__3126147830366376143_33597220'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb__3126147830366376143_33597220'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 02:27:20 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 10159ms (Views: 10156.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 02:27:51 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f65ugMTgBVlB4x3mNEOAsGDGGaYHz9+d0vidVlf9C+3AHfL29bhoUVv/LsAbybnXvKiNIWDSwCfxamQgC5M+Aw==", "contact"=>{"name"=>"れい", "email"=>"rei@gmail", "message"=>"ppp"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (1.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "れい"], ["email", "rei@gmail"], ["message", "ppp"], ["created_at", "2021-09-05 02:27:51.964873"], ["updated_at", "2021-09-05 02:27:51.964873"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.5ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 763.4ms
+Sent mail to mysdgsproject@gmail.com (1720.0ms)
+Date: Sun, 05 Sep 2021 02:27:53 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <61342b29625c_28be1f8c0cc26634@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61342b29362e_28be1f8c0cc265ef";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61342b29362e_28be1f8c0cc265ef
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77ya44KM44GE
+5qeYDQoNCuODoeODvOODq+OCouODieODrOOCue+8mnJlaUBnbWFpbA0KDQrj
+gYrllY/jgYTlkIjjgo/jgZvlhoXlrrnvvJpwcHANCg0KLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg==
+
+----==_mimepart_61342b29362e_28be1f8c0cc265ef
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJrjgozj
+gYTmp5g8L3A+DQoNCjxwPuODoeODvOODq+OCouODieODrOOCue+8mnJlaUBn
+bWFpbDwvcD4NCg0KPHA+44GK5ZWP44GE5ZCI44KP44Gb5YaF5a6577yacHBw
+PC9QPg0KDQo8cD4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLTwvcD4NCg0KICA8L2JvZHk+DQo8L2h0bWw+DQo=
+
+----==_mimepart_61342b29362e_28be1f8c0cc265ef--
+
+Completed 500 Internal Server Error in 2777ms (ActiveRecord: 6.3ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:9:in `create'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 02:38:12 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 02:38:26 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Ir4nptcMBdBiwP7kul3hpI0+gZMnPa+zwFtvwsc3jpfOWToqgRdH1uXMN29Y07hTlpugSuB6QTsk5TJV3Lr1A==", "contact"=>{"name"=>"poo", "email"=>"poo@gmail", "message"=>"poo"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "poo"], ["email", "poo@gmail"], ["message", "poo"], ["created_at", "2021-09-05 02:38:26.288988"], ["updated_at", "2021-09-05 02:38:26.288988"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.4ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 8.5ms
+Sent mail to mysdgsproject@gmail.com (1310.4ms)
+Date: Sun, 05 Sep 2021 02:38:26 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <61342da24f729_28be1f91fb82681f@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61342da24ab30_28be1f91fb826774";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61342da24ab30_28be1f91fb826774
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77yacG9v5qeY
+DQoNCuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFpbA0KDQrjgYrl
+lY/jgYTlkIjjgo/jgZvlhoXlrrnvvJpwb28NCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg==
+
+----==_mimepart_61342da24ab30_28be1f91fb826774
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJpwb2/m
+p5g8L3A+DQoNCjxwPuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFp
+bDwvcD4NCg0KPHA+44GK5ZWP44GE5ZCI44KP44Gb5YaF5a6577yacG9vPC9Q
+Pg0KDQo8cD4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLTwvcD4NCg0KICA8L2JvZHk+DQo8L2h0bWw+DQo=
+
+----==_mimepart_61342da24ab30_28be1f91fb826774--
+
+Completed 500 Internal Server Error in 1334ms (ActiveRecord: 6.9ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:9:in `create'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 02:44:09 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (68.9ms)
+Completed 200 OK in 546ms (Views: 501.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 02:44:18 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aQTk5rFQhTl7lP9aS4W5+B3AKKVG+GynpvBc+LAD8F7Wt3iQgAjoMWGIzHxkD4Cfwa68IiHlcx2FYqWO7G3FsA==", "contact"=>{"name"=>"pp", "email"=>"poo@gmail", "message"=>"pp"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (1.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "pp"], ["email", "poo@gmail"], ["message", "pp"], ["created_at", "2021-09-05 02:44:18.177310"], ["updated_at", "2021-09-05 02:44:18.177310"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.4ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 26.1ms
+Sent mail to mysdgsproject@gmail.com (1715.7ms)
+Date: Sun, 05 Sep 2021 02:44:18 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <61342f023f0ec_2c37285eda83379@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61342f023e40b_2c37285eda833651";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61342f023e40b_2c37285eda833651
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77yacHDmp5gN
+Cg0K44Oh44O844Or44Ki44OJ44Os44K577yacG9vQGdtYWlsDQoNCuOBiuWV
+j+OBhOWQiOOCj+OBm+WGheWuue+8mnBwDQoNCi0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQo=
+
+----==_mimepart_61342f023e40b_2c37285eda833651
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJpwcOan
+mDwvcD4NCg0KPHA+44Oh44O844Or44Ki44OJ44Os44K577yacG9vQGdtYWls
+PC9wPg0KDQo8cD7jgYrllY/jgYTlkIjjgo/jgZvlhoXlrrnvvJpwcDwvUD4N
+Cg0KPHA+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS08L3A+DQoNCiAgPC9ib2R5Pg0KPC9odG1sPg0K
+
+----==_mimepart_61342f023e40b_2c37285eda833651--
+
+Completed 500 Internal Server Error in 1800ms (ActiveRecord: 7.0ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:9:in `create'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:03:21 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 548ms (Views: 506.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 03:03:35 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S5iwKnL8n4AVoj6GzQI5YSzUIuc6IRk7j247VxFXOO70KyxcQ6TyiA++DaDiiAAG8Lq2YF08BoGs/MIhTTkNAA==", "contact"=>{"name"=>"poo", "email"=>"poo@gmail", "message"=>"poo"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "poo"], ["email", "poo@gmail"], ["message", "poo"], ["created_at", "2021-09-05 03:03:35.908785"], ["updated_at", "2021-09-05 03:03:35.908785"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.4ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 24.8ms
+Sent mail to mysdgsproject@gmail.com (1169.9ms)
+Date: Sun, 05 Sep 2021 03:03:35 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <61343387f14c1_2fa02dbce581399c@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61343387f0813_2fa02dbce58138aa";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61343387f0813_2fa02dbce58138aa
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77yacG9v5qeY
+DQoNCuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFpbA0KDQrjgYrl
+lY/jgYTlkIjjgo/jgZvlhoXlrrnvvJpwb28NCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg==
+
+----==_mimepart_61343387f0813_2fa02dbce58138aa
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJpwb2/m
+p5g8L3A+DQoNCjxwPuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFp
+bDwvcD4NCg0KPHA+44GK5ZWP44GE5ZCI44KP44Gb5YaF5a6577yacG9vPC9Q
+Pg0KDQo8cD4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLTwvcD4NCg0KICA8L2JvZHk+DQo8L2h0bWw+DQo=
+
+----==_mimepart_61343387f0813_2fa02dbce58138aa--
+
+Completed 500 Internal Server Error in 1255ms (ActiveRecord: 7.4ms)
+
+
+  
+Net::SMTPAuthenticationError (534-5.7.9 Application-specific password required. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:9:in `create'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:04:34 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 550ms (Views: 508.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 03:04:44 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"394EGTFt3J4e8PTso4PKl+3MkGhrw4tDji4qhTTqQOtgbZhvADWxlgTsx8qMCfPwMaIE7wzelPmtvNPzaIR1BQ==", "contact"=>{"name"=>"poo", "email"=>"poo@gmail", "message"=>"poo"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "poo"], ["email", "poo@gmail"], ["message", "poo"], ["created_at", "2021-09-05 03:04:44.110268"], ["updated_at", "2021-09-05 03:04:44.110268"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.5ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 25.6ms
+Sent mail to mysdgsproject@gmail.com (1206.7ms)
+Date: Sun, 05 Sep 2021 03:04:44 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <613433cc2e93e_302b208a0a0225e0@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_613433cc2db9c_302b208a0a0224ce";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_613433cc2db9c_302b208a0a0224ce
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77yacG9v5qeY
+DQoNCuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFpbA0KDQrjgYrl
+lY/jgYTlkIjjgo/jgZvlhoXlrrnvvJpwb28NCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg==
+
+----==_mimepart_613433cc2db9c_302b208a0a0224ce
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJpwb2/m
+p5g8L3A+DQoNCjxwPuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFp
+bDwvcD4NCg0KPHA+44GK5ZWP44GE5ZCI44KP44Gb5YaF5a6577yacG9vPC9Q
+Pg0KDQo8cD4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLTwvcD4NCg0KICA8L2JvZHk+DQo8L2h0bWw+DQo=
+
+----==_mimepart_613433cc2db9c_302b208a0a0224ce--
+
+Completed 500 Internal Server Error in 1291ms (ActiveRecord: 6.5ms)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/contacts_controller.rb:9:in `create'
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:06:40 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (62.6ms)
+Completed 200 OK in 532ms (Views: 488.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 03:06:51 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Ows31JMjCT4J3Gmch/ZFSAHDKOfaullAjRiGLFHkb1DX7CpYxThLOI7QoBdleBy/GmYJPh39t8hpptu7SmkUw==", "contact"=>{"name"=>"poo", "email"=>"poo@gmail", "message"=>"poo"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (1.0ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "poo"], ["email", "poo@gmail"], ["message", "poo"], ["created_at", "2021-09-05 03:06:51.119700"], ["updated_at", "2021-09-05 03:06:51.119700"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.4ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 25.2ms
+Sent mail to mysdgsproject@gmail.com (2588.2ms)
+Date: Sun, 05 Sep 2021 03:06:51 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <6134344b311a7_30911f6bb74119d@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6134344b303bf_30911f6bb74104b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6134344b303bf_30911f6bb74104b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77yacG9v5qeY
+DQoNCuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFpbA0KDQrjgYrl
+lY/jgYTlkIjjgo/jgZvlhoXlrrnvvJpwb28NCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg==
+
+----==_mimepart_6134344b303bf_30911f6bb74104b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJpwb2/m
+p5g8L3A+DQoNCjxwPuODoeODvOODq+OCouODieODrOOCue+8mnBvb0BnbWFp
+bDwvcD4NCg0KPHA+44GK5ZWP44GE5ZCI44KP44Gb5YaF5a6577yacG9vPC9Q
+Pg0KDQo8cD4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLTwvcD4NCg0KICA8L2JvZHk+DQo8L2h0bWw+DQo=
+
+----==_mimepart_6134344b303bf_30911f6bb74104b--
+
+Redirected to https://33c8598f8f9648458d49841afde9a320.vfs.cloud9.ap-northeast-1.amazonaws.com/contacts/new
+Completed 302 Found in 2674ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:06:53 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:19:22 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (127.3ms)
+Completed 200 OK in 926ms (Views: 879.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/contacts" for 126.89.127.106 at 2021-09-05 03:19:39 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JRGK4+YGOdZeTYirXyPGdmzDQZtsfJ6gg7izZ3HhDNSaohaV115U3kRRu41wqf8RsK3VHAthgRqgKkoRLY85Og==", "contact"=>{"name"=>"れい", "email"=>"rei@gmail", "message"=>"れいだよ"}, "commit"=>"送信"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[36mContact Create (1.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "れい"], ["email", "rei@gmail"], ["message", "れいだよ"], ["created_at", "2021-09-05 03:19:39.466860"], ["updated_at", "2021-09-05 03:19:39.466860"]]
+  ↳ app/controllers/contacts_controller.rb:8
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:8
+  Rendering contact_mailer/contact_mail.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.html.erb within layouts/mailer (0.5ms)
+  Rendering contact_mailer/contact_mail.text.erb within layouts/mailer
+  Rendered contact_mailer/contact_mail.text.erb within layouts/mailer (0.3ms)
+ContactMailer#contact_mail: processed outbound mail in 64.0ms
+Sent mail to mysdgsproject@gmail.com (2650.8ms)
+Date: Sun, 05 Sep 2021 03:19:39 +0000
+From: from@example.com
+To: mysdgsproject@gmail.com
+Message-ID: <6134374ba6567_33102f0d3d46353b@ip-172-31-3-132.ap-northeast-1.compute.internal.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6134374ba4f68_33102f0d3d4634e1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6134374ba4f68_33102f0d3d4634e1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+DQrjgYrllY/jgYTlkIjjgo/jgZvlhoXlrrkNCg0KLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0K5ZCN5YmN77ya44KM44GE
+5qeYDQoNCuODoeODvOODq+OCouODieODrOOCue+8mnJlaUBnbWFpbA0KDQrj
+gYrllY/jgYTlkIjjgo/jgZvlhoXlrrnvvJrjgozjgYTjgaDjgogNCg0KLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg==
+
+----==_mimepart_6134374ba4f68_33102f0d3d4634e1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIA0KPGg1PuOBiuWVj+OBhOWQ
+iOOCj+OBm+WGheWuuTwvaDU+DQoNCjxQPi0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9QPg0KDQo8cD7lkI3liY3vvJrjgozj
+gYTmp5g8L3A+DQoNCjxwPuODoeODvOODq+OCouODieODrOOCue+8mnJlaUBn
+bWFpbDwvcD4NCg0KPHA+44GK5ZWP44GE5ZCI44KP44Gb5YaF5a6577ya44KM
+44GE44Gg44KIPC9QPg0KDQo8cD4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLTwvcD4NCg0KICA8L2JvZHk+DQo8L2h0bWw+DQo=
+
+----==_mimepart_6134374ba4f68_33102f0d3d4634e1--
+
+Redirected to https://33c8598f8f9648458d49841afde9a320.vfs.cloud9.ap-northeast-1.amazonaws.com/contacts/new
+Completed 302 Found in 2867ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:19:42 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:22:35 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 102ms (Views: 82.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:23:55 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 139ms (Views: 136.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:24:46 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:25:12 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 110ms (Views: 107.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:25:29 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 116ms (Views: 113.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:25:49 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 66ms (Views: 61.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:28:03 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 78ms (Views: 75.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:29:28 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 64ms (Views: 61.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:29:57 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 64ms (Views: 61.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:30:47 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:31:05 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.1ms)
+  Rendered homes/top.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 88ms (Views: 82.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:37:37 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (26.5ms)
+  Rendered homes/top.html.erb within layouts/application (27.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 92ms (Views: 91.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:38:07 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.5ms)
+  Rendered homes/top.html.erb within layouts/application (15.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:39:31 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.5ms)
+  Rendered homes/top.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 92ms (Views: 91.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:40:55 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.3ms)
+  Rendered homes/top.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:41:44 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.0ms)
+  Rendered homes/top.html.erb within layouts/application (15.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 91ms (Views: 90.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:42:19 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.1ms)
+  Rendered homes/top.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:43:11 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.1ms)
+  Rendered homes/top.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 101ms (Views: 100.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:43:57 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.2ms)
+  Rendered homes/top.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 77ms (Views: 76.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:46:52 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (25.9ms)
+  Rendered homes/top.html.erb within layouts/application (27.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 91ms (Views: 90.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:46:56 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.2ms)
+  Rendered homes/top.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:47:19 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (25.0ms)
+  Rendered homes/top.html.erb within layouts/application (26.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 90ms (Views: 89.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:47:45 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.0ms)
+  Rendered homes/top.html.erb within layouts/application (15.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:47:48 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:48:30 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.4ms)
+  Rendered homes/top.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 84ms (Views: 83.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:48:48 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (27.0ms)
+  Rendered homes/top.html.erb within layouts/application (28.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 93ms (Views: 92.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:49:00 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.1ms)
+  Rendered homes/top.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contacts/new" for 126.89.127.106 at 2021-09-05 03:49:35 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ContactsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 126.89.127.106 at 2021-09-05 03:49:39 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (14.2ms)
+  Rendered homes/top.html.erb within layouts/application (15.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for 126.89.127.106 at 2021-09-05 03:49:41 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 76ms (Views: 64.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for 126.89.127.106 at 2021-09-05 03:49:48 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/_info.html.erb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/_info.html.erb:17
+  Rendered users/_info.html.erb (26.3ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  Rendered users/show.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 185ms (Views: 137.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users" for 126.89.127.106 at 2021-09-05 03:49:57 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 1], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 5]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 5]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 86ms (Views: 82.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/about" for 126.89.127.106 at 2021-09-05 03:50:03 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 76ms (Views: 75.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-05 03:50:05 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (14.2ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:34
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "post_category_relations" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:34
+  Rendered posts/index.html.erb within layouts/application (42.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 105ms (Views: 99.6ms | ActiveRecord: 3.3ms)
+
+
