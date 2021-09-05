@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+
+  get 'contacts/new'
+  get 'contacts/create'
   get '/search' => 'searches#search'
   get 'relationships/create'
   get 'relationships/destroy'
@@ -14,12 +16,15 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
-  end  
-  
+  end
+
   # DM用
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
-  
+
+  # お問い合わせ用
+  resources :contacts, :only => [:new, :create]
+
   get 'posts/category/1', to: 'posts#category1', as: 'category1'
   get 'posts/category/2', to: 'posts#category2', as: 'category2'
   get 'posts/category/3', to: 'posts#category3', as: 'category3'
