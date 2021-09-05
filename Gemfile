@@ -70,4 +70,8 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'devise-i18n'
+
 gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
