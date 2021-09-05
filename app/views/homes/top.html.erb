@@ -17,11 +17,13 @@
   
   <div class="sign-up">
     <h2>Join us from here</h2>
-    <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
-    
+    <p class="link"><%= link_to "Sign up", new_user_registration_path %></p>
     <h2>Already our member?</h2>
-    <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
+    <p class="link"><%= link_to "Log in", new_user_session_path %></p>
   </div>
+  
+  <p id="inquiry"><%= link_to 'サイトに関するお問い合わせ', contacts_new_path %></p>
+  
 </div>
 
 <style>
@@ -51,4 +53,14 @@
     text-align: center;
   }
  
+ .link {
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+ }
+ 
+ #inquiry {
+   text-align: center;
+   padding: 20px;
+ }
 </style>
