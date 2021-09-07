@@ -28596,3 +28596,542 @@ Processing by PostsController#category1 as HTML
 Completed 200 OK in 84ms (Views: 80.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 126.89.127.106 at 2021-09-07 22:12:59 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered posts/_lignups.html.erb (640.2ms)
+  Rendered homes/top.html.erb within layouts/application (643.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 855ms (Views: 843.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/category/2" for 126.89.127.106 at 2021-09-07 22:13:06 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category2 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47
+  Rendering posts/category2.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 2], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (11.4ms)
+  Rendered posts/category2.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 91ms (Views: 66.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/category/2" for 126.89.127.106 at 2021-09-07 22:16:30 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category2 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47
+  Rendering posts/category2.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 2], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.6ms)
+  Rendered posts/category2.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:31 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (10.3ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (14.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 83ms (Views: 81.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/category/3" for 126.89.127.106 at 2021-09-07 22:16:33 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category3 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/category3.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 3], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.4ms)
+  Rendered posts/category3.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:34 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (19.8ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (24.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 112ms (Views: 110.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/category/4" for 126.89.127.106 at 2021-09-07 22:16:35 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category4 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:57
+  Rendering posts/category4.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 4], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.8ms)
+  Rendered posts/category4.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 95ms (Views: 90.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:38 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.7ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/5" for 126.89.127.106 at 2021-09-07 22:16:39 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category5 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62
+  Rendering posts/category5.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 5], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.4ms)
+  Rendered posts/category5.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:40 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (10.4ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/6" for 126.89.127.106 at 2021-09-07 22:16:41 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category6 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:66
+  Rendering posts/category6.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 6], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.5ms)
+  Rendered posts/category6.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:42 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.8ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 79ms (Views: 78.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/7" for 126.89.127.106 at 2021-09-07 22:16:43 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category7 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70
+  Rendering posts/category7.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 7], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.4ms)
+  Rendered posts/category7.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:44 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.7ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/8" for 126.89.127.106 at 2021-09-07 22:16:45 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category8 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74
+  Rendering posts/category8.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 8], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.9ms)
+  Rendered posts/category8.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 79ms (Views: 68.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:46 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.9ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/9" for 126.89.127.106 at 2021-09-07 22:16:47 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category9 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78
+  Rendering posts/category9.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 9], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.4ms)
+  Rendered posts/category9.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 72ms (Views: 66.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:16:49 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (10.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/category/10" for 126.89.127.106 at 2021-09-07 22:16:50 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category10 as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:82
+  Rendering posts/category10.html.erb within layouts/application
+  Rendered posts/category10.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "Inverted-010.png" is not present in the asset pipeline.
+):
+    2:   <div class="row">
+    3:     <div class="col-md-4">
+    4:       <!--<img src="/assets/Inverted-10.png", class="img">-->
+    5:       <%= image_tag 'Inverted-010.png', class: "img" %>
+    6:       <div class="card border-secondary mb-3" style="max-width: 18rem;">
+    7:       <div class="card-header">人や国の不平等をなくそう</div>
+    8:         <div class="card-body text-secondary">
+  
+app/views/posts/category10.html.erb:5:in `_app_views_posts_category___html_erb__3091540820914586584_69894907842460'
+Started GET "/posts/category/10" for 126.89.127.106 at 2021-09-07 22:17:04 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category10 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:82
+  Rendering posts/category10.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 10], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.4ms)
+  Rendered posts/category10.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 72ms (Views: 67.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:17:06 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.8ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/11" for 126.89.127.106 at 2021-09-07 22:17:08 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category11 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:86
+  Rendering posts/category11.html.erb within layouts/application
+  Rendered posts/category11.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "Inverted-011.png" is not present in the asset pipeline.
+):
+    2:   <div class="row">
+    3:     <div class="col-md-4">
+    4:       <!--<img src="/assets/Inverted-11.png", class="img">-->
+    5:       <%= image_tag 'Inverted-011.png', class: "img" %>
+    6:       <div class="card border-secondary mb-3" style="max-width: 18rem;">
+    7:       <div class="card-header">住み続けられるまちづくりを</div>
+    8:         <div class="card-body text-secondary">
+  
+app/views/posts/category11.html.erb:5:in `_app_views_posts_category___html_erb__1274614459483714952_69895057875440'
+Started GET "/posts/category/11" for 126.89.127.106 at 2021-09-07 22:18:02 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category11 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:86
+  Rendering posts/category11.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (3.0ms)
+  Rendered posts/category11.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:04 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.7ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (14.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 85ms (Views: 83.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/12" for 126.89.127.106 at 2021-09-07 22:18:06 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category12 as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90
+  Rendering posts/category12.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 12], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.7ms)
+  Rendered posts/category12.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 58ms (Views: 53.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:07 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.8ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/13" for 126.89.127.106 at 2021-09-07 22:18:09 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category13 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94
+  Rendering posts/category13.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 13], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.6ms)
+  Rendered posts/category13.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 76ms (Views: 70.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:10 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.9ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/11" for 126.89.127.106 at 2021-09-07 22:18:11 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category11 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:86
+  Rendering posts/category11.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.7ms)
+  Rendered posts/category11.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 69ms (Views: 65.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:13 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (10.2ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/14" for 126.89.127.106 at 2021-09-07 22:18:14 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category14 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:98
+  Rendering posts/category14.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 14], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.5ms)
+  Rendered posts/category14.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:15 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.7ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 82ms (Views: 80.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/15" for 126.89.127.106 at 2021-09-07 22:18:16 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category15 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:102
+  Rendering posts/category15.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 15], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.6ms)
+  Rendered posts/category15.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:17 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.6ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/16" for 126.89.127.106 at 2021-09-07 22:18:18 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category16 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:106
+  Rendering posts/category16.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 16], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.5ms)
+  Rendered posts/category16.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 126.89.127.106 at 2021-09-07 22:18:22 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_lignups_sm.html.erb (9.5ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (13.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:28
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/category/17" for 126.89.127.106 at 2021-09-07 22:18:23 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#category17 as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:110
+  Rendering posts/category17.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "posts"."id" FROM "posts" LEFT OUTER JOIN "post_category_relations" ON "post_category_relations"."post_id" = "posts"."id" LEFT OUTER JOIN "categories" ON "categories"."id" = "post_category_relations"."category_id" WHERE "post_category_relations"."category_id" = ? ORDER BY "posts"."id" DESC, "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["category_id", 17], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/_samecategory.html.erb:2
+  Rendered posts/_samecategory.html.erb (2.5ms)
+  Rendered posts/category17.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 74ms (Views: 69.6ms | ActiveRecord: 0.4ms)
+
+
