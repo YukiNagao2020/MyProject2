@@ -8,7 +8,7 @@ before_action :authenticate_user!, except: [:index]
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).reverse_order.order(created_at: :desc)
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
 
     # DM用
     @currentUserEntry=Entry.where(user_id: current_user.id)
