@@ -17,7 +17,7 @@
                     <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
                 </th>
                 <th>
-                    <%= user.name %>
+                    <%= link_to user.name, user_path(user) %>
                 </th>
                 <th>
                     <%= user.introduction %>
@@ -42,7 +42,7 @@
                     <%= attachment_image_tag(post.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
                 </th>
                 <th>
-                    <%= post.title %>
+                    <%= link_to post.title, post_path(post) %>
                 </th>
                 <th>
                     <%= post.body %>
