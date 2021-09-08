@@ -8,7 +8,7 @@
 
 Category.create!(id: 1, name: 'No Poverty/貧困をなくそう')
 Category.create!(id: 2, name: 'Zero Hunger/飢餓をゼロに')
-Category.create!(id: 3, name: 'Good Health and Well-being/すべての人に健康と福祉を')
+Category.create!(id: 3, name: 'Good Health and Well-Being/すべての人に健康と福祉を')
 Category.create!(id: 4, name: 'Quality Education/質の高い教育をみんなに')
 Category.create!(id: 5, name: 'Gender Equality/ジェンダー平等を実現しよう')
 Category.create!(id: 6, name: 'Clean Water and Sanitation/安全な水とトイレを世界中に')
