@@ -45,7 +45,7 @@ before_action :authenticate_user!, except: [:index]
     @user = User.find(params[:id])
     if @user == current_user
       @user.destroy
-      flash[:alert] = 'Your account has successfully deleted./退会しましたご利用ありがとうございました。'
+      flash[:alert] = 'Your account has successfully deleted./退会しました。ご利用ありがとうございました。'
       redirect_to root_path
     end  
   end  
