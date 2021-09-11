@@ -38,6 +38,7 @@ before_action :authenticate_user!, except: [:index]
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    flash[:notice] = 'Your account has successfully updated./編集が完了しました。'
     redirect_to user_path(@user.id)
   end
 
