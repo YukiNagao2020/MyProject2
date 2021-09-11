@@ -3,16 +3,16 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">New Post</h5>
+      <h4 class="text-dark bg-light p-4 mb-0 heading">New Post</h4>
        <div class="form-body p-4">
         <%= render 'posts/error', post: @post %>
           <%= form_with model: @post, local:true do |f| %>
-            <%= f.label :title, 'Title' %><br>
+            <%= f.label :title, 'Title', class:"label" %><br>
             <%= f.text_field :title, class:"form-control" %>
-            <%= f.label :body,'Contents of Activity' %><br>
+            <%= f.label :body,'Contents of Activity', class:"label" %><br>
             <%= f.text_area :body, class:"form-control" %>
            
-            <%= f.label :category, 'Category' %><br>
+            <%= f.label :category, 'Category', class:"label" %><br>
             <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
               <%= category.label do %>
                 <%= category.check_box %>
@@ -20,7 +20,7 @@
               <% end %>
             <% end %>
            <br>
-            <%= f.label :image, 'Photo' %>
+            <%= f.label :image, 'Photo', class:"label" %>
             <%= f.attachment_field :image, class:"form-control" %><br>
             <%= f.submit 'Create New Post', class:"btn btn-lg btn-block btn-info mt-4" %>
           <% end %>
@@ -28,3 +28,13 @@
     </div>
   </div>
 </div>
+
+<style>
+  .heading {
+    text-align: center;
+  }
+  .label {
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
