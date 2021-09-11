@@ -45,7 +45,7 @@ class PostsController < ApplicationController
       end
     end
     if post.update_attributes(post_params)
-      flash[:success] = "Editing done./編集完了しました。"
+      # flash[:success] = "Editing done./編集完了しました。"
       redirect_to posts_url
     else
       render :edit

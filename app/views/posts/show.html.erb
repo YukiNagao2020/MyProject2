@@ -17,14 +17,14 @@
           
     </div>
     <div class="col-md-6" id="post_<%= @post.id %>">
-      <h5 class="title">Title：<%= @post.title %></h5>
-      <p>Category: 
+      <h4 class="title">Title：<%= @post.title %></h4>
+      <p><h5>Category: </h5>
         <% @post.categories.each do |category| %>
         <%= link_to category.name, category_path(category) %>
         <% end %>
       </p>
-      <p>Contents of Activities：<%= @post.body %></p>
-      <p>Posted by：<font size="5"><%= link_to @post.user.name, user_path(@post.user) %></font>&nbsp;
+      <p><h5>Contents of Activities：</h5><%= @post.body %></p>
+      <p><span id="name">Posted by：</span><font size="5"><%= link_to @post.user.name, user_path(@post.user) %></font>&nbsp;
         <span class="date">on <%= @post.created_at.strftime('%Y/%m/%d') %></span>
       </p>
        <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>&nbsp;&nbsp;
@@ -101,5 +101,9 @@
   }
   .post-comment {
     margin-top: 20px;
+  }
+  
+  #name {
+    font-size: 20px;
   }
 </style>
