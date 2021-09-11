@@ -36,18 +36,29 @@
           <div class="card">
             <div class="card-header">
                 <%= link_to post_path(post.id) do %>
-                  <p>Title：<%= post.title %></p>
+                  <h3>Title：<%= post.title %></h3>
                 <% end %>
             </div>
             <div class="card-body">
               <h5 class="card-title">Contents of Activities：<%= post.body %></h5>
-              <%= attachment_image_tag post, :image, format: 'jpeg', size: "250x250" %>
+              
+              <!--投稿画像-->
+              <div class="post-partial">
+                <div id="post-<%= post.id %>">
+                  <div>
+                    <% post.images.each do |image| %>
+                      <%= image_tag(image, width:300) %>
+                    <% end %>
+                  </div>
+                </div>
+            </div>
+              
               <p class="card-text">
-                <span>Category:
+                <p><span id="category">Category:</span>
                   <% post.categories.each do |category| %>
                   <%= category.name %>
                   <% end %>
-                </span>
+                </p>
               </p>
                <p>Posted by<font size="4">&nbsp;<%= @user.name %></font>&nbsp;
                 <span class="date">on <%= post.created_at.strftime('%Y/%m/%d') %></span>
@@ -85,4 +96,8 @@
      margin: 30px;
    }
   
+  #category {
+    font-size: 20px;
+    font-weight: bold;
+  }
 </style>

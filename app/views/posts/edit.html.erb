@@ -1,0 +1,41 @@
+<div class="container content">
+    <%= form_with(model: @post, local: true) do |f| %>
+    <div>
+      <h5><%= f.label :title, 'Title' %></h5>
+      <%= f.text_field :title %>
+    </div><br>
+    
+    <div>
+      <h5><%= f.label :body, 'Content' %></h5>
+      <%= f.text_area :body %>
+    </div><br>
+  
+    <div>
+      <h5><%= f.label :images, 'Photo(s)' %></h5>
+      <%= f.file_field :images, multiple: true %>
+    </div><br>
+  
+    <% if @post.images.present? %>
+      <p>Select photos you wish to delete./現在登録されている画像（削除するものはチェックしてください）</p>
+      <% @post.images.each do |image| %>
+        <%= f.check_box :image_ids, {multiple: true}, image.id, false %>
+        <%= image_tag image, size:"200x200" %> <br>
+      <% end %>
+    <% end %>
+  
+    <div class="submit">
+      <%= f.submit  'UPDATE(selected photos will be removed)/編集する', class:"btn btn-success" %>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .submit {
+    margin: 20px;
+  }
+</style>

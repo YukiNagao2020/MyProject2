@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
+      flash[:success] = "You have posted a new post!/作成しました"
       redirect_to posts_path
     else
       render :new
@@ -30,9 +31,32 @@ class PostsController < ApplicationController
     @post_comment = PostComment.new
   end
 
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    post = Post.find(params[:id])
+    if params[:post][:image_ids]
+      params[:post][:image_ids].each do |image_id|
+        image = post.images.find(image_id)
+        image.purge
+      end
+    end
+    if post.update_attributes(post_params)
+      flash[:success] = "Editing done./編集完了しました。"
+      redirect_to posts_url
+    else
+      render :edit
+    end
+  end
+
+
   def destroy
     post = Post.find(params[:id])
     post.destroy
+    flash[:success] = "You have deleted a post./削除しました。"
     redirect_to posts_path
   end
 
@@ -119,6 +143,6 @@ class PostsController < ApplicationController
    private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, category_ids: [])
+    params.require(:post).permit(:title, :body, images: [], category_ids: [])
   end
 end

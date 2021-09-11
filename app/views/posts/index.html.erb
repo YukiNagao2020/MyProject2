@@ -3,44 +3,59 @@
 <div class="container">
   <h1 class="display-12 heading">&nbsp;&nbsp;All the Activities</h1>
    <div class="row">
-     <div class="col-md-4">
+     
+     <div class="col-md-4 categories">
        <%= render 'posts/lignups_sm' %>
      </div>
+     
      <div class="col-md-8">
       <div class="card w-200 mx-auto mt-4 shadow-lg">
-        <div class="row">
+        <!--<div class="row">-->
           <% @posts.each do |post| %>
-          <div class="col-md-4">
-            <%= attachment_image_tag post, :image, format: 'jpeg', size: "250x250" %>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">
+
+          <!--<div class="col-md-8">-->
+            <div class="card">
+                <div class="card-header">
                   <%= link_to post_path(post) do %>
-                    <p>Title：<%= post.title %></p>
+                    <h4>Title：<%= post.title %></h4>
                   <% end %>
-                </h5>
-                <p class="card-text">
-                  <p>Contents of Activities：<%= post.body %></p>
-                </p>
-                <p class="card-text">
-                   <p>Category:
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p><h5>Contents of Activities：</h5><%= post.body %></p>
+                  </blockquote>
+               
+                
+                   <!--画像投稿用-->
+                <div class="img-container">
+                  <div id="post-<%= post.id %>">
+                    <div class="item">
+                      <% post.images.each do |image| %>
+                        <%= image_tag(image, width:250) %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                
+                <p>
+                   <p><h5>Category:</h5>
                       <% post.categories.each do |category| %>
                       <%= link_to category.name, category_path(category) %>
                       <% end %>
                    </p>
                 </p>
-                <p class="card-text">
-                  <p>Posted by：<%= link_to post.user.name, user_path(post.user) %></p>
+                <p>
+                  <h5>Posted by：<%= link_to post.user.name, user_path(post.user) %></h5>
                   <p> <%= attachment_image_tag post.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></p>
                   <p><%= link_to "#{post.post_comments.count} Comment(s)", post_path(post.id) %></p>
                 </p>
+                
               </div>
             </div>
           <% end %>
-          
-        
-         
+
+
+
 
         </div>
       </div>
@@ -54,7 +69,7 @@
             </nav>
           </div>
      </div>
-  
+
   </div>
 </div>
 
@@ -63,6 +78,10 @@
     margin-top: 20px;
     margin-bottom: 50px;
   }
-
-
+  
+  .card-header {
+    text-align: center;
+  }
+ 
+　
 </style>

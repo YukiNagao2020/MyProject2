@@ -11,17 +11,17 @@
             <%= f.text_field :title, class:"form-control" %>
             <%= f.label :body,'Contents of Activity', class:"label" %><br>
             <%= f.text_area :body, class:"form-control" %>
-           
+
             <%= f.label :category, 'Category', class:"label" %><br>
-            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
               <%= category.label do %>
                 <%= category.check_box %>
                 <%= category.text %>
               <% end %>
             <% end %>
            <br>
-            <%= f.label :image, 'Photo', class:"label" %>
-            <%= f.attachment_field :image, class:"form-control" %><br>
+            <%= f.label :images, 'Photo(s)/画像は同時に複数投稿することができます。', class:"label" %>
+            <%= f.file_field :images, multiple: true, class:"form-control" %><br>
             <%= f.submit 'Create New Post', class:"btn btn-lg btn-block btn-info mt-4" %>
           <% end %>
        </div>
@@ -36,5 +36,6 @@
   .label {
     font-weight: bold;
     text-align: center;
+    margin-top: 10px;
   }
 </style>
