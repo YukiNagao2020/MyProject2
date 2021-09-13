@@ -1,20 +1,26 @@
 <table class='table'>
   <tr><div id="image"><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></div></tr>
   <tr>
-	  <th>name</th>
+	  <th>Name/名前</th>
 	  <th><%= user.name %></th>
   </tr>
   <tr>
-	  <th>introduction</th>
+	  <th>Introduction（自己紹介）</th>
 	  <th><%= user.introduction %></th>
   </tr>
   <tr>
-    <th>follows</th>
+    <th>Follows<br>（フォロー中）</th>
     <th><%= link_to user.followings.count, user_followings_path(user) %></th>
   </tr>
   <tr>
-    <th>followers</th>
+    <th>Followers<br>（フォロワー）</th>
     <th><%= link_to user.followers.count, user_followers_path(user) %></th>
+  </tr>
+  <tr>
+    <% if @user.id == current_user.id %>
+      <th>Notice<br>（新規通知）</th>
+      <th><%= link_to 'Check New Notices', notifications_path %></th>
+    <% end %>
   </tr>
 
 

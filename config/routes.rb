@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   # お問い合わせ用
   resources :contacts, :only => [:new, :create]
 
+  # DM通知用
+  resources :notifications, :only => [:index, :update]
+  
+  
   get 'posts/category/1', to: 'posts#category1', as: 'category1'
   get 'posts/category/2', to: 'posts#category2', as: 'category2'
   get 'posts/category/3', to: 'posts#category3', as: 'category3'

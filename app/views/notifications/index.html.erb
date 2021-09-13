@@ -1,0 +1,22 @@
+<div class="container notices">
+  <h4 id="notice">New Notices of received DM/新規通知</h4>
+  <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+  <% if notifications.exists? %>
+      <%= render notifications %>
+  <% else %>
+      <p>通知はございません。</p>
+  <% end %>
+
+</div>
+
+<style>
+  #notice {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .notices {
+    text-align: center;
+    padding: 30px;
+  }
+</style>
