@@ -140,9 +140,20 @@ class PostsController < ApplicationController
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
   end
   
+  def hashtag
+    @user = current_user
+    if params[:name].nil?
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
+    else
+      @hashtag = Hashtag.find_by(hashname: params[:name])
+      @posts = @hashtag.posts.page(params[:page]).per(20).reverse_order
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
+    end
+  end
+  
    private
 
   def post_params
-    params.require(:post).permit(:title, :body, images: [], category_ids: [])
+    params.require(:post).permit(:title, :body, :hashbody, :user_id, hashtag_ids: [], images: [], category_ids: [])
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_13_031111) do
+ActiveRecord::Schema.define(version: 2021_09_16_052630) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,22 @@ ActiveRecord::Schema.define(version: 2021_09_13_031111) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hashtag_posts", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashtag_id"], name: "index_hashtag_posts_on_hashtag_id"
+    t.index ["post_id"], name: "index_hashtag_posts_on_post_id"
+  end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
+  end
+
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
@@ -106,6 +122,7 @@ ActiveRecord::Schema.define(version: 2021_09_13_031111) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "hashbody"
   end
 
   create_table "relationships", force: :cascade do |t|

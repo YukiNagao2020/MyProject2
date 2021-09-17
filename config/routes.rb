@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   # DM通知用
   resources :notifications, :only => [:index, :update]
   
+  # タグ用
+  get '/post/hashtag/:name' => 'posts#hashtag'
+  get '/post/hashtag' => 'posts#hashtag'
   
   get 'posts/category/1', to: 'posts#category1', as: 'category1'
   get 'posts/category/2', to: 'posts#category2', as: 'category2'

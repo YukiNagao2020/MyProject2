@@ -11,6 +11,9 @@
             <%= f.text_field :title, class:"form-control" %>
             <%= f.label :body,'Contents of Activity', class:"label" %><br>
             <%= f.text_area :body, class:"form-control" %>
+            <%= f.label :hashbody, 'Hashtags', class:"label" %>
+            <%= f.text_area :hashbody, size:"55x3", class:"form-control" %>
+            
 
             <%= f.label :category, 'Category', class:"label" %><br>
             <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>

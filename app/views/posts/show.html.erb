@@ -24,6 +24,9 @@
         <% end %>
       </p>
       <p><h5>Contents of Activities：</h5><%= @post.body %></p>
+      <p>
+        <%= render_with_hashtags(@post.hashbody) %>
+      </p>
       <p><span id="name">Posted by：</span><font size="5"><%= link_to @post.user.name, user_path(@post.user) %></font>&nbsp;
         <span class="date">on <%= @post.created_at.strftime('%Y/%m/%d') %></span>
       </p>
