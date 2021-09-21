@@ -40,9 +40,14 @@
   background: linear-gradient(180deg, #f7ff59, #f8ff67, #f8ff73, #f9ff80, #faff8b, #faff96, #fbffa1, #fbffac, #fcffb7, #fcffc1, #fdffcc, #fdffd6);
  }
  
- h1, h2 {
+ h1, h2, h4, h5, p {
  font-family: 'Oswald', sans-serif;
 // font-family: 'Roboto', sans-serif;
+ }
+ 
+ .li {
+ font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
  }
  
  #title {

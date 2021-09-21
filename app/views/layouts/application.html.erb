@@ -26,18 +26,18 @@
 
           <ul class="navbar-nav ml-auto">
            <% if user_signed_in? %>
-            <li><%= link_to ' Home',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
-            <li><%= link_to "About",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
-            <li><%= link_to "Activities", posts_path, class:"fas fa-solid fa-shoe-prints nav-link fa-lg" %></li>&nbsp;
-            <li><%= link_to "Users", users_path, class:"fas fa-solid fa-users nav-link fa-lg" %></li>&nbsp;
-            <li><%= link_to "New Post", new_post_path, class:"fas fa-light fa-seedling nav-link fa-lg" %></li>&nbsp;
-            <li><%= link_to "My Page", user_path(current_user.id), class:"fas fa-light fa-key nav-link fa-lg" %></li>&nbsp;
-            <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class:"fas fa-solid fa-dove nav-link fa-lg" %></li>
+            <li class="li"><%= link_to ' Home',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
+            <li class="li"><%= link_to "About",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "Activities", posts_path, class:"fas fa-solid fa-shoe-prints nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "Users", users_path, class:"fas fa-solid fa-users nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "New Post", new_post_path, class:"fas fa-light fa-seedling nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "My Page", user_path(current_user.id), class:"fas fa-light fa-key nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "Log out", destroy_user_session_path, method: :delete, class:"fas fa-solid fa-sunset nav-link fa-lg" %></li>
            <% else %>
-            <li><%= link_to ' Home',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
-            <li><%= link_to "About",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
-            <li><%= link_to "Sign up", new_user_registration_path, class:"fas fa-solid fa-user-plus nav-link fa-lg" %></li>
-            <li><%= link_to "Log in", new_user_session_path, class:"fas fa-solid fa-gears nav-link fa-lg" %></li>
+            <li class="li"><%= link_to ' Home',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
+            <li class="li"><%= link_to "About",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "Sign up", new_user_registration_path, class:"fas fa-solid fa-user-plus nav-link fa-lg" %></li>
+            <li class="li"><%= link_to "Log in", new_user_session_path, class:"fas fa-solid fa-gears nav-link fa-lg" %></li>
           <% end %>
           </ul>
          </div>
@@ -48,7 +48,7 @@
         <div class="container search">
           <% if user_signed_in? %>
             <%= form_with url:search_path, method: :get, local: true do |f| %>
-              <%= f.submit :"Search for=>>", class:"btn btn-primary btn-sm"%>
+              <%= f.submit :"Search here/ここから投稿とユーザーを検索できます=>>", class:"btn btn-primary btn-sm"%>
               <%= f.text_field 'search[value]' %>
               <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
               <%= f.select 'search[how]', options_for_select({ "complete match" => "match", "partial match" => "partial"  }) %>

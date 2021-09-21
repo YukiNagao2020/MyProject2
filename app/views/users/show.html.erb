@@ -36,11 +36,11 @@
           <div class="card">
             <div class="card-header">
                 <%= link_to post_path(post.id) do %>
-                  <h3>Title：<%= post.title %></h3>
+                  <h3>Title（タイトル）：<%= post.title %></h3>
                 <% end %>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Contents of Activities：<%= post.body %></h5>
+              <h5 class="card-title">Contents of Activities（活動内容）：<%= post.body %></h5>
               
               <!--投稿画像-->
               <div class="post-partial">
@@ -54,13 +54,13 @@
             </div>
               
               <p class="card-text">
-                <p><span id="category">Category:</span>
+                <p><span id="category">Category（カテゴリー）:</span>
                   <% post.categories.each do |category| %>
                   <%= category.name %>
                   <% end %>
                 </p>
               </p>
-               <p>Posted by<font size="4">&nbsp;<%= @user.name %></font>&nbsp;
+               <p>Posted by（投稿者）<font size="4">&nbsp;<%= @user.name %></font>&nbsp;
                 <span class="date">on <%= post.created_at.strftime('%Y/%m/%d') %></span>
                </p> 
             </div>

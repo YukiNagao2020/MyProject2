@@ -3,19 +3,19 @@
 <div class="containar">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h4 class="text-dark bg-light p-4 mb-0 heading">New Post</h4>
+      <h4 class="text-dark bg-light p-4 mb-0 heading">New Post/新規投稿</h4>
        <div class="form-body p-4">
         <%= render 'posts/error', post: @post %>
           <%= form_with model: @post, local:true do |f| %>
-            <%= f.label :title, 'Title', class:"label" %><br>
+            <p><%= f.label :title, 'Title（タイトル）', class:"label" %></p>
             <%= f.text_field :title, class:"form-control" %>
-            <%= f.label :body,'Contents of Activity', class:"label" %><br>
+            <p><%= f.label :body,'Contents of Activity（活動内容）', class:"label" %></p>
             <%= f.text_area :body, class:"form-control" %>
-            <%= f.label :hashbody, 'Hashtags', class:"label" %>
+            <p><%= f.label :hashbody, 'Hashtags: please put "#" before each word./タグ: 各単語の前に"#" を付けてください。）', class:"label" %></p>
             <%= f.text_area :hashbody, size:"55x3", class:"form-control" %>
-            
 
-            <%= f.label :category, 'Category', class:"label" %><br>
+
+            <p><%= f.label :category, 'Category（カテゴリー）', class:"label" %></p>
             <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
               <%= category.label do %>
                 <%= category.check_box %>
@@ -23,9 +23,9 @@
               <% end %>
             <% end %>
            <br>
-            <%= f.label :images, 'Photo(s)/画像は同時に複数投稿することができます。', class:"label" %>
-            <%= f.file_field :images, multiple: true, class:"form-control" %><br>
-            <%= f.submit 'Create New Post', class:"btn btn-lg btn-block btn-info mt-4" %>
+            <p><%= f.label :images, 'Photo(s)/画像は同時に複数投稿することができます。', class:"label" %></p>
+            <%= f.file_field :images, multiple: true, class:"form-control" %>
+            <p><%= f.submit 'Create New Post（投稿する）', class:"btn btn-lg btn-block btn-info mt-4" %></p>
           <% end %>
        </div>
     </div>

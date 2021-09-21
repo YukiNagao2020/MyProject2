@@ -29,16 +29,16 @@
 <div class='follow'>
   <% if current_user != user %>
     <% if current_user.following?(user) %>
-      <%= link_to "Unfollow", user_relationships_path(user.id), method: :delete, class: "btn btn-outline-info" %>
+      <%= link_to "Unfollow（フォローを外す）", user_relationships_path(user.id), method: :delete, class: "btn btn-outline-info" %>
     <% else %>
-      <%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
+      <%= link_to "Follow（フォローする）", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
     <% end %>
   <% else %>
-  
+
     <% if @user.id == current_user.id %>
-      <%= link_to 'Edit my profile',edit_user_path(user),class: "btn btn-outline-primary edit" %>
-      <%= link_to 'Delete my account', user_path(user), method: :delete, data:{confirm: 'Are you sure?'}, class:"btn btn-outline-danger btn-sm destroy" %>
-      
+      <%= link_to 'Edit my profile（マイプロフィールを編集する）',edit_user_path(user),class: "btn btn-outline-primary edit" %>
+      <%= link_to 'Delete my account（アカウントを削除する）', user_path(user), method: :delete, data:{confirm: 'Are you sure?'}, class:"btn btn-outline-danger btn-sm destroy" %>
+
       <!--DM用-->
     <!--  <% else %>-->
     <!--    <% if @isRoom == true %>-->
@@ -52,7 +52,7 @@
     <!--      <% end %>-->
     <!--    <% end %>-->
     <!--<% end %>-->
-    
+
   <% end %>
 </div>
 
@@ -60,12 +60,12 @@
   #image {
     margin-bottom: 30px;
   }
-  
+
   .follow {
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .edit {
     margin: 10px;
   }

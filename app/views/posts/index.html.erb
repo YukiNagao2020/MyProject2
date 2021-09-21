@@ -1,13 +1,13 @@
 <% provide(:title, 'Activities') %>
 
 <div class="container">
-  <h1 class="display-12 heading">&nbsp;&nbsp;All the Activities</h1>
+  <h1 class="display-12 heading">&nbsp;&nbsp;All the Activities/活動一覧</h1>
    <div class="row">
-     
+
      <div class="col-md-4">
        <%= render 'posts/lignups_sm' %>
      </div>
-     
+
      <div class="col-md-8">
       <div class="card w-300 mx-auto mt-4 shadow-lg">
         <!--<div class="row">-->
@@ -17,15 +17,15 @@
             <div class="card">
                 <div class="card-header">
                   <%= link_to post_path(post) do %>
-                    <h4>Title：<%= post.title %></h4>
+                    <h4>Title（タイトル）：<%= post.title %></h4>
                   <% end %>
                 </div>
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
-                    <p><h5>Contents of Activities：</h5><%= post.body %></p>
+                    <p><h5>Contents of Activities（活動内容）：</h5><%= post.body %></p>
                   </blockquote>
-               
-                
+
+
                    <!--画像投稿用-->
                 <div class="img-container">
                   <div id="post-<%= post.id %>">
@@ -36,20 +36,20 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <p>
-                   <p><h5>Category:</h5>
+                   <p><h5>Category（カテゴリー）:</h5>
                       <% post.categories.each do |category| %>
                       <%= link_to category.name, category_path(category) %>
                       <% end %>
                    </p>
                 </p>
                 <p>
-                  <h5>Posted by：<%= link_to post.user.name, user_path(post.user) %></h5>
+                  <h5>Posted by（投稿者）：<%= link_to post.user.name, user_path(post.user) %></h5>
                   <p> <%= attachment_image_tag post.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></p>
-                  <p><%= link_to "#{post.post_comments.count} Comment(s)", post_path(post.id) %></p>
+                  <p><%= link_to "#{post.post_comments.count} Comment(s)/コメント", post_path(post.id) %></p>
                 </p>
-                
+
               </div>
             </div>
           <% end %>
@@ -78,15 +78,15 @@
     margin-top: 20px;
     margin-bottom: 50px;
   }
-  
+
   .card-header {
     text-align: center;
   }
- 
+
 　.item {
 　  text-align: center;
 　  padding: 30px;
 　  margin: 30px;
-　  
+
 　}
 </style>
