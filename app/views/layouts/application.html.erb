@@ -50,8 +50,8 @@
             <%= form_with url:search_path, method: :get, local: true do |f| %>
               <%= f.submit :"Search here/ここから投稿とユーザーを検索できます=>>", class:"btn btn-primary btn-sm"%>
               <%= f.text_field 'search[value]' %>
-              <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post" }) %>
-              <%= f.select 'search[how]', options_for_select({ "complete match" => "match", "partial match" => "partial"  }) %>
+              <%= f.select 'search[model]', options_for_select({ "User/ユーザー" => "user", "Post/投稿" => "post" }) %>
+              <%= f.select 'search[how]', options_for_select({ "complete match/完全一致" => "match", "partial match/部分一致" => "partial"  }) %>
 
             <% end %>
           <% end %>
