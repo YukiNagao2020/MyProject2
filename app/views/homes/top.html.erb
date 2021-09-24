@@ -16,9 +16,9 @@
   </div>
   
    <div class="sign-up">
-      <h2>Join us from here</h2>
+      <h2>Join us from here<span id="signup">（新規登録はこちらから）</span></h2>
       <p class="link"><%= link_to "Sign up", new_user_registration_path %></p>
-      <h2>Already our member?</h2>
+      <h2>Already our member?<span id=signup>（既にご登録されている方はこちらから）</span></h2>
       <p class="link"><%= link_to "Log in", new_user_session_path %></p>
    </div>
   
@@ -60,5 +60,9 @@
    #inquiry {
      text-align: center;
      padding: 20px;
+   }
+   
+   #signup {
+     font-size: 15px;
    }
 </style>

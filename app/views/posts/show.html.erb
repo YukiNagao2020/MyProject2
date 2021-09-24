@@ -17,17 +17,17 @@
           
     </div>
     <div class="col-md-6" id="post_<%= @post.id %>">
-      <h4 class="title">Title：<%= @post.title %></h4>
-      <p><h5>Category: </h5>
+      <h4 class="title">Title（タイトル）：<%= @post.title %></h4>
+      <p><h5>Category（カテゴリー）: </h5>
         <% @post.categories.each do |category| %>
         <%= link_to category.name, category_path(category) %>
         <% end %>
       </p>
-      <p><h5>Contents of Activities：</h5><%= @post.body %></p>
+      <p><h5>Contents of Activities（活動内容）：</h5><%= @post.body %></p>
       <p>
         <%= render_with_hashtags(@post.hashbody) %>
       </p>
-      <p><span id="name">Posted by：</span><font size="5"><%= link_to @post.user.name, user_path(@post.user) %></font>&nbsp;
+      <p><span id="name">Posted by（投稿者）：</span><font size="5"><%= link_to @post.user.name, user_path(@post.user) %></font>&nbsp;
         <span class="date">on <%= @post.created_at.strftime('%Y/%m/%d') %></span>
       </p>
        <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>&nbsp;&nbsp;
@@ -35,8 +35,8 @@
         <span class="favorite-btn"><%= render "favorites/favorite-btn" %></span>
         
         <% if @post.user == current_user %>
-        　<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-success btn-sm' %>
-          <%= link_to "Delete this post", post_path(@post), method: :delete, data: { confirm: 'Are you sure？' }, class: 'btn btn-outline-danger btn-sm' %>
+        　<p><%= link_to 'Edit（投稿を編集する）', edit_post_path(@post), class: 'btn btn-outline-success btn-sm edit' %></p>
+          <p><%= link_to "Delete this post（投稿を削除する）", post_path(@post), method: :delete, data: { confirm: 'Are you sure？' }, class: 'btn btn-outline-danger btn-sm' %></p>
         <% end %>
     </div>
   </div>
@@ -46,14 +46,14 @@
   <div class="row bottom">
     <div class="col-md-6">
       <div class="comments">
-      <h4><span class="bg-light">Comments：<%= @post.post_comments.count %></span></h4>
+      <h4><span class="bg-light">Comments（コメント）：<%= @post.post_comments.count %></span></h4>
       <% @post.post_comments.each do |post_comment| %>
         <p id="comment"><%= post_comment.comment %></p>
-        <p id="comment_name">Commented by : <%= post_comment.user.name %><span>&nbsp;on <%= post_comment.created_at.strftime('%Y/%m/%d') %></span></p>&nbsp;
+        <p id="comment_name">Commented by（コメント投稿者） : <%= post_comment.user.name %><span>&nbsp;on <%= post_comment.created_at.strftime('%Y/%m/%d') %></span></p>&nbsp;
         
         <% if post_comment.user == current_user %>
           <div class="comment-delete">
-            <%= link_to "Delete this comment", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: 'btn btn-outline-danger btn-sm' %>
+            <%= link_to "Delete this comment（コメントを削除する）", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: 'btn btn-outline-danger btn-sm' %>
           </div>
         <% end %>
       <% end %>
@@ -62,9 +62,9 @@
     <div class="col-md-6"> 
       <div class="new-comment">
       <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
-        <h3><span class="bg-light">New Post</span></h3>
+        <h3 id="comment"><span class="bg-light">New Comment<span id="commentjp">（コメントの投稿）</span></h3>
         <%= f.text_area :comment, rows:7,cols:40,placeholder: "write comments here" %>
-        <p><%= f.submit "Post a new comment", class:"btn btn-outline-primary btn-lg post-comment" %></p>
+        <p><%= f.submit "Post a new comment（コメントを投稿する）", class:"btn btn-outline-primary btn-lg post-comment" %></p>
         
       <% end %>
       </div>
@@ -108,5 +108,17 @@
   
   #name {
     font-size: 20px;
+  }
+  
+  #comment {
+    margin: 20px;
+  }
+  
+  .edit {
+    margin-top: 20px;
+  }
+  
+  #commentjp {
+    font-size: 15px;
   }
 </style>

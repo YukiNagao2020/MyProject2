@@ -26,18 +26,18 @@
 
           <ul class="navbar-nav ml-auto">
            <% if user_signed_in? %>
-            <li class="li"><%= link_to ' Home',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
-            <li class="li"><%= link_to "About",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
-            <li class="li"><%= link_to "Activities", posts_path, class:"fas fa-solid fa-shoe-prints nav-link fa-lg" %></li>&nbsp;
-            <li class="li"><%= link_to "Users", users_path, class:"fas fa-solid fa-users nav-link fa-lg" %></li>&nbsp;
-            <li class="li"><%= link_to "New Post", new_post_path, class:"fas fa-light fa-seedling nav-link fa-lg" %></li>&nbsp;
-            <li class="li"><%= link_to "My Page", user_path(current_user.id), class:"fas fa-light fa-key nav-link fa-lg" %></li>&nbsp;
-            <li class="li"><%= link_to "Log out", destroy_user_session_path, method: :delete, class:"fas fa-solid fa-sunset nav-link fa-lg" %></li>
+            <li class="li"><%= link_to ' Home/ホーム',root_path,class: 'fas fa-solid fa-home nav-link' %></li>&nbsp;
+            <li class="li"><%= link_to "About/サイトについて",about_path, class:"fas fa-solid fa-rainbow nav-link" %></li>&nbsp;
+            <li class="li"><%= link_to "Activities/活動", posts_path, class:"fas fa-solid fa-shoe-prints nav-link" %></li>&nbsp;
+            <li class="li"><%= link_to "Users/ユーザー", users_path, class:"fas fa-solid fa-users nav-link" %></li>&nbsp;
+            <li class="li"><%= link_to "New Post/新規投稿", new_post_path, class:"fas fa-light fa-seedling nav-link" %></li>&nbsp;
+            <li class="li"><%= link_to "My Page/マイページ", user_path(current_user.id), class:"fas fa-light fa-key nav-link" %></li>&nbsp;
+            <li class="li"><%= link_to "Log out/ログアウト", destroy_user_session_path, method: :delete, class:"fas fa-solid fa-sunset nav-link" %></li>
            <% else %>
-            <li class="li"><%= link_to ' Home',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
-            <li class="li"><%= link_to "About",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
-            <li class="li"><%= link_to "Sign up", new_user_registration_path, class:"fas fa-solid fa-user-plus nav-link fa-lg" %></li>
-            <li class="li"><%= link_to "Log in", new_user_session_path, class:"fas fa-solid fa-gears nav-link fa-lg" %></li>
+            <li class="li"><%= link_to ' Home/ホーム',root_path,class: 'fas fa-solid fa-home nav-link fa-lg' %></li>&nbsp;
+            <li class="li"><%= link_to "About/サイトについて",about_path, class:"fas fa-solid fa-rainbow nav-link fa-lg" %></li>&nbsp;
+            <li class="li"><%= link_to "Sign up/新規登録", new_user_registration_path, class:"fas fa-solid fa-user-plus nav-link fa-lg" %></li>
+            <li class="li"><%= link_to "Log in/ログイン", new_user_session_path, class:"fas fa-solid fa-gears nav-link fa-lg" %></li>
           <% end %>
           </ul>
          </div>

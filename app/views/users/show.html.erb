@@ -2,7 +2,7 @@
 
 <div class="container main">
   <div class="row">
-    <div class="col-md-3" id="profile">
+    <div class="col-md-4" id="profile">
       <div class="profile-container">
         <h3 class="profile-name"><%= @user.name %></h3>
 
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="col-md-8 .offset-md-1" id="post">
+    <div class="col-md-8", id="post">
       <div class="row">
         <% @posts.each do |post| %>
         <div>
@@ -40,7 +40,7 @@
                 <% end %>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Contents of Activities（活動内容）：<%= post.body %></h5>
+              <h5 class="card-title">Contents of Activities（活動内容）：</h5><p><%= post.body %></p>
               
               <!--投稿画像-->
               <div class="post-partial">
@@ -85,6 +85,7 @@
 
   .main {
     margin-top: 50px;
+    margin-bottom: 50px;
   }
   
   .card {
