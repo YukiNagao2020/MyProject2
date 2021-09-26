@@ -1,5 +1,5 @@
 <div class="container notices">
-  <h4 id="notice">New Notices of received DM/新規通知</h4>
+  <h4 id="notice">New Notices of received DM/新規ダイクレトメッセージ通知</h4>
   <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
   <% if notifications.exists? %>
       <%= render notifications %>
