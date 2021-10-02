@@ -13,7 +13,6 @@ class PostsController < ApplicationController
       flash[:success] = "You have posted a new post!/作成しました"
       tags = []
       @post.images.each do |image|
-
         tags << Vision.get_image_data(image)
       end
       # binding.irb
