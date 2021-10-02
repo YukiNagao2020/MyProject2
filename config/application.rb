@@ -11,6 +11,7 @@ module MyProject
     # Initialize configuration defaults for originally generated Rails version.
     config.i18n.default_locale = :ja
     config.load_defaults 5.2
+    config.paths.add 'lib', eager_load: true # 追加
     config.time_zone = 'Tokyo'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

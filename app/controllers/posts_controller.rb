@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def new
     @post = Post.new
   end
@@ -8,8 +8,19 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    # binding.irb
     if @post.save
       flash[:success] = "You have posted a new post!/作成しました"
+      tags = []
+      @post.images.each do |image|
+
+        tags << Vision.get_image_data(image)
+      end
+      # binding.irb
+      tags.each do |tag|
+       @post.tags.create!(name: tag)
+      end
+      # binding.irb
       redirect_to posts_path
     else
       render :new
@@ -60,28 +71,28 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
- 
+
   def category1
     @category = Category.find(1)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
     # @posting = Post.find(params[:id])
-  end  
-  
+  end
+
   def category2
     @category = Category.find(2)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
-  end 
-  
+  end
+
   def category3
     @category = Category.find(3)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
   end
-  
+
   def category4
     @category = Category.find(4)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
   end
-  
+
   def category5
     @category = Category.find(5)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
@@ -134,12 +145,12 @@ class PostsController < ApplicationController
     @category = Category.find(17)
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
   end
-  
+
   def category
     @category = Category.find(params[:id])
     @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
   end
-  
+
   def hashtag
     @user = current_user
     if params[:name].nil?
@@ -150,7 +161,7 @@ class PostsController < ApplicationController
       @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
     end
   end
-  
+
    private
 
   def post_params

@@ -36,7 +36,15 @@
                     </div>
                   </div>
                 </div>
-
+                  
+                <!--画像用タグ  -->
+                
+                <div class="tag-box">
+                  <% post.tags.each do |tag| %>
+                    <span class="label"><%= tag.name %></span>
+                  <% end %>
+                </div>  
+                
                 <p>
                    <p><h5>Category（カテゴリー）:</h5>
                       <% post.categories.each do |category| %>

@@ -12,6 +12,14 @@
                   <%= image_tag(image, width:300) %>
                 <% end %>
               </div>
+              
+              <!--画像用タグ-->
+              <div class="tag-box">
+                <% @post.tags.each do |tag| %>
+                  <span class="label"><%= tag.name %></span>
+                <% end %>
+              </div>
+              
             </div>
         </div>
           

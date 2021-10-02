@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many_attached :images
+  has_many :tags, dependent: :destroy
   
   # タグ用
   has_many :hashtag_posts, dependent: :destroy
@@ -38,5 +39,5 @@ class Post < ApplicationRecord
   
   validates :title, presence: true
   validates :body, presence:true
-  attachment :image
+ 
 end
